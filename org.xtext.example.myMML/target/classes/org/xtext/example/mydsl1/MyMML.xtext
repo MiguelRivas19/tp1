@@ -1,0 +1,42 @@
+grammar org.xtext.example.mydsl1.MyMML with org.eclipse.xtext.common.Terminals
+
+generate myMML "http://www.xtext.org/example/mydsl1/MyMML"
+
+MMLGenerator:
+	instructions+=Instruction+
+;
+
+Instruction:(PutIn);
+
+PutIn:
+	'putIn' putId =ID value=Element
+;
+
+Element:
+	(FileSet| PredictiveColumns | CibleColumn | TestValueSize | TrainValueSize |AlgorithmSet)
+;
+
+FileSet:
+	'fileSet' '<'text=STRING'>'
+;
+PredictiveColumns:
+	'predictiveColumns' '<'column=STRING'>'
+;
+CibleColumn:
+	'CibleColumn' '<'column=STRING'>'
+;
+TestValueSize:
+	'testValueSize' '<'size=INT'>'
+;
+
+TrainValueSize:
+	'trainValueSize' '<'size=INT'>'
+;
+
+AlgorithmSet:
+	'algorithmSet' '<'algoName=Algo'>'
+;
+
+enum Algo:
+	DecisionTreeClassifier = 'DecisionTreeClassifier' | SVM = 'SVM' | J48 ='J48' | NaiveBayes= 'NaiveBayes'
+;
