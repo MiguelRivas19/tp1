@@ -33,6 +33,11 @@ public class MyMMLParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyMMLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
 			builder.put(grammarAccess.getAlgoAccess().getAlternatives(), "rule__Algo__Alternatives");
+			builder.put(grammarAccess.getStrategyAccess().getAlternatives(), "rule__Strategy__Alternatives");
+			builder.put(grammarAccess.getDisplayParamsAccess().getAlternatives(), "rule__DisplayParams__Alternatives");
+			builder.put(grammarAccess.getMMLGeneratorAccess().getGroup(), "rule__MMLGenerator__Group__0");
+			builder.put(grammarAccess.getStrategySetAccess().getGroup(), "rule__StrategySet__Group__0");
+			builder.put(grammarAccess.getResultDisplayParamsSetAccess().getGroup(), "rule__ResultDisplayParamsSet__Group__0");
 			builder.put(grammarAccess.getPutInAccess().getGroup(), "rule__PutIn__Group__0");
 			builder.put(grammarAccess.getFileSetAccess().getGroup(), "rule__FileSet__Group__0");
 			builder.put(grammarAccess.getPredictiveColumnsAccess().getGroup(), "rule__PredictiveColumns__Group__0");
@@ -40,7 +45,11 @@ public class MyMMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTestValueSizeAccess().getGroup(), "rule__TestValueSize__Group__0");
 			builder.put(grammarAccess.getTrainValueSizeAccess().getGroup(), "rule__TrainValueSize__Group__0");
 			builder.put(grammarAccess.getAlgorithmSetAccess().getGroup(), "rule__AlgorithmSet__Group__0");
-			builder.put(grammarAccess.getMMLGeneratorAccess().getInstructionsAssignment(), "rule__MMLGenerator__InstructionsAssignment");
+			builder.put(grammarAccess.getMMLGeneratorAccess().getStrategySetAssignment_0(), "rule__MMLGenerator__StrategySetAssignment_0");
+			builder.put(grammarAccess.getMMLGeneratorAccess().getInstructionsAssignment_1(), "rule__MMLGenerator__InstructionsAssignment_1");
+			builder.put(grammarAccess.getMMLGeneratorAccess().getResultDisplayParamsSetAssignment_2(), "rule__MMLGenerator__ResultDisplayParamsSetAssignment_2");
+			builder.put(grammarAccess.getStrategySetAccess().getStrategyAssignment_1(), "rule__StrategySet__StrategyAssignment_1");
+			builder.put(grammarAccess.getResultDisplayParamsSetAccess().getParamsAssignment_1(), "rule__ResultDisplayParamsSet__ParamsAssignment_1");
 			builder.put(grammarAccess.getPutInAccess().getPutIdAssignment_1(), "rule__PutIn__PutIdAssignment_1");
 			builder.put(grammarAccess.getPutInAccess().getValueAssignment_2(), "rule__PutIn__ValueAssignment_2");
 			builder.put(grammarAccess.getFileSetAccess().getTextAssignment_2(), "rule__FileSet__TextAssignment_2");

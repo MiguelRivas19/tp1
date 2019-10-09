@@ -3,11 +3,18 @@ grammar org.xtext.example.mydsl1.MyMML with org.eclipse.xtext.common.Terminals
 generate myMML "http://www.xtext.org/example/mydsl1/MyMML"
 
 MMLGenerator:
-	instructions+=Instruction+
+	strategySet=StrategySet instructions+= Instruction* resultDisplayParamsSet=ResultDisplayParamsSet
 ;
 
 Instruction:(PutIn);
 
+StrategySet:
+	'strategySet' strategy = Strategy
+;
+
+ResultDisplayParamsSet:
+	'ResultDisplayParamsSet' params+= DisplayParams+
+;
 PutIn:
 	'putIn' putId =ID value=Element
 ;
@@ -30,7 +37,7 @@ TestValueSize:
 ;
 
 TrainValueSize:
-	'trainValueSize' '<'size=INT'>'
+	'trainValueSize' '<'size='>'
 ;
 
 AlgorithmSet:
@@ -39,4 +46,10 @@ AlgorithmSet:
 
 enum Algo:
 	DecisionTreeClassifier = 'DecisionTreeClassifier' | SVM = 'SVM' | J48 ='J48' | NaiveBayes= 'NaiveBayes'
+;
+enum Strategy:
+	TrainingTest = 'TrainingTest' | CrossValidation = 'CrossValidation'
+;
+enum DisplayParams:
+	Precision = 'Precision' | Recall ='Recall' | f1 ='f1'
 ;

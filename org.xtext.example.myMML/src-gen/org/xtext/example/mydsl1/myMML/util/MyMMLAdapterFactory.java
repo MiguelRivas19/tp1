@@ -86,6 +86,16 @@ public class MyMMLAdapterFactory extends AdapterFactoryImpl
         return createInstructionAdapter();
       }
       @Override
+      public Adapter caseStrategySet(StrategySet object)
+      {
+        return createStrategySetAdapter();
+      }
+      @Override
+      public Adapter caseResultDisplayParamsSet(ResultDisplayParamsSet object)
+      {
+        return createResultDisplayParamsSetAdapter();
+      }
+      @Override
       public Adapter casePutIn(PutIn object)
       {
         return createPutInAdapter();
@@ -173,6 +183,36 @@ public class MyMMLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInstructionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myMML.StrategySet <em>Strategy Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myMML.StrategySet
+   * @generated
+   */
+  public Adapter createStrategySetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet <em>Result Display Params Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet
+   * @generated
+   */
+  public Adapter createResultDisplayParamsSetAdapter()
   {
     return null;
   }

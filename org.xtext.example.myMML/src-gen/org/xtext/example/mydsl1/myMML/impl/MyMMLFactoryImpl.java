@@ -68,6 +68,8 @@ public class MyMMLFactoryImpl extends EFactoryImpl implements MyMMLFactory
     {
       case MyMMLPackage.MML_GENERATOR: return createMMLGenerator();
       case MyMMLPackage.INSTRUCTION: return createInstruction();
+      case MyMMLPackage.STRATEGY_SET: return createStrategySet();
+      case MyMMLPackage.RESULT_DISPLAY_PARAMS_SET: return createResultDisplayParamsSet();
       case MyMMLPackage.PUT_IN: return createPutIn();
       case MyMMLPackage.ELEMENT: return createElement();
       case MyMMLPackage.FILE_SET: return createFileSet();
@@ -93,6 +95,10 @@ public class MyMMLFactoryImpl extends EFactoryImpl implements MyMMLFactory
     {
       case MyMMLPackage.ALGO:
         return createAlgoFromString(eDataType, initialValue);
+      case MyMMLPackage.STRATEGY:
+        return createStrategyFromString(eDataType, initialValue);
+      case MyMMLPackage.DISPLAY_PARAMS:
+        return createDisplayParamsFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -110,6 +116,10 @@ public class MyMMLFactoryImpl extends EFactoryImpl implements MyMMLFactory
     {
       case MyMMLPackage.ALGO:
         return convertAlgoToString(eDataType, instanceValue);
+      case MyMMLPackage.STRATEGY:
+        return convertStrategyToString(eDataType, instanceValue);
+      case MyMMLPackage.DISPLAY_PARAMS:
+        return convertDisplayParamsToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -137,6 +147,30 @@ public class MyMMLFactoryImpl extends EFactoryImpl implements MyMMLFactory
   {
     InstructionImpl instruction = new InstructionImpl();
     return instruction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StrategySet createStrategySet()
+  {
+    StrategySetImpl strategySet = new StrategySetImpl();
+    return strategySet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResultDisplayParamsSet createResultDisplayParamsSet()
+  {
+    ResultDisplayParamsSetImpl resultDisplayParamsSet = new ResultDisplayParamsSetImpl();
+    return resultDisplayParamsSet;
   }
 
   /**
@@ -253,6 +287,50 @@ public class MyMMLFactoryImpl extends EFactoryImpl implements MyMMLFactory
    * @generated
    */
   public String convertAlgoToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Strategy createStrategyFromString(EDataType eDataType, String initialValue)
+  {
+    Strategy result = Strategy.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertStrategyToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DisplayParams createDisplayParamsFromString(EDataType eDataType, String initialValue)
+  {
+    DisplayParams result = DisplayParams.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDisplayParamsToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -27,12 +27,12 @@ public interface TrainValueSize extends Element
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Size</em>' attribute.
-   * @see #setSize(int)
+   * @see #setSize(String)
    * @see org.xtext.example.mydsl1.myMML.MyMMLPackage#getTrainValueSize_Size()
    * @model
    * @generated
    */
-  int getSize();
+  String getSize();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl1.myMML.TrainValueSize#getSize <em>Size</em>}' attribute.
@@ -42,6 +42,6 @@ public interface TrainValueSize extends Element
    * @see #getSize()
    * @generated
    */
-  void setSize(int value);
+  void setSize(String value);
 
 } // TrainValueSize

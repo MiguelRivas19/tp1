@@ -87,6 +87,20 @@ public class MyMMLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyMMLPackage.STRATEGY_SET:
+      {
+        StrategySet strategySet = (StrategySet)theEObject;
+        T result = caseStrategySet(strategySet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyMMLPackage.RESULT_DISPLAY_PARAMS_SET:
+      {
+        ResultDisplayParamsSet resultDisplayParamsSet = (ResultDisplayParamsSet)theEObject;
+        T result = caseResultDisplayParamsSet(resultDisplayParamsSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyMMLPackage.PUT_IN:
       {
         PutIn putIn = (PutIn)theEObject;
@@ -182,6 +196,38 @@ public class MyMMLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInstruction(Instruction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Strategy Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Strategy Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStrategySet(StrategySet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Result Display Params Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Result Display Params Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResultDisplayParamsSet(ResultDisplayParamsSet object)
   {
     return null;
   }

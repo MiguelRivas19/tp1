@@ -35,7 +35,7 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
    * @generated
    * @ordered
    */
-  protected static final int SIZE_EDEFAULT = 0;
+  protected static final String SIZE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
@@ -45,7 +45,7 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
    * @generated
    * @ordered
    */
-  protected int size = SIZE_EDEFAULT;
+  protected String size = SIZE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
    * @generated
    */
   @Override
-  public int getSize()
+  public String getSize()
   {
     return size;
   }
@@ -85,9 +85,9 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
    * @generated
    */
   @Override
-  public void setSize(int newSize)
+  public void setSize(String newSize)
   {
-    int oldSize = size;
+    String oldSize = size;
     size = newSize;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MyMMLPackage.TRAIN_VALUE_SIZE__SIZE, oldSize, size));
@@ -120,7 +120,7 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
     switch (featureID)
     {
       case MyMMLPackage.TRAIN_VALUE_SIZE__SIZE:
-        setSize((Integer)newValue);
+        setSize((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class TrainValueSizeImpl extends ElementImpl implements TrainValueSize
     switch (featureID)
     {
       case MyMMLPackage.TRAIN_VALUE_SIZE__SIZE:
-        return size != SIZE_EDEFAULT;
+        return SIZE_EDEFAULT == null ? size != null : !SIZE_EDEFAULT.equals(size);
     }
     return super.eIsSet(featureID);
   }

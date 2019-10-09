@@ -12,10 +12,27 @@
       <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//Algo/J48"/>
       <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//Algo/NaiveBayes"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMML.ecore#//Strategy">
+      <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//Strategy/TrainingTest"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//Strategy/CrossValidation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMML.ecore#//DisplayParams">
+      <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//DisplayParams/Precision"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//DisplayParams/Recall"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMML.ecore#//DisplayParams/f1"/>
+    </genEnums>
     <genClasses ecoreClass="MyMML.ecore#//MMLGenerator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMML.ecore#//MMLGenerator/strategySet"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMML.ecore#//MMLGenerator/instructions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMML.ecore#//MMLGenerator/resultDisplayParamsSet"/>
     </genClasses>
     <genClasses ecoreClass="MyMML.ecore#//Instruction"/>
+    <genClasses ecoreClass="MyMML.ecore#//StrategySet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMML.ecore#//StrategySet/strategy"/>
+    </genClasses>
+    <genClasses ecoreClass="MyMML.ecore#//ResultDisplayParamsSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMML.ecore#//ResultDisplayParamsSet/params"/>
+    </genClasses>
     <genClasses ecoreClass="MyMML.ecore#//PutIn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMML.ecore#//PutIn/putId"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMML.ecore#//PutIn/value"/>

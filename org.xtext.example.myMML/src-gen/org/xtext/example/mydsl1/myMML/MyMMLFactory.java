@@ -42,6 +42,24 @@ public interface MyMMLFactory extends EFactory
   Instruction createInstruction();
 
   /**
+   * Returns a new object of class '<em>Strategy Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Strategy Set</em>'.
+   * @generated
+   */
+  StrategySet createStrategySet();
+
+  /**
+   * Returns a new object of class '<em>Result Display Params Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Result Display Params Set</em>'.
+   * @generated
+   */
+  ResultDisplayParamsSet createResultDisplayParamsSet();
+
+  /**
    * Returns a new object of class '<em>Put In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

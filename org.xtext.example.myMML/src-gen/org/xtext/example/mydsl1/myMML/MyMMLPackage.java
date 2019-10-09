@@ -69,13 +69,31 @@ public interface MyMMLPackage extends EPackage
   int MML_GENERATOR = 0;
 
   /**
+   * The feature id for the '<em><b>Strategy Set</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MML_GENERATOR__STRATEGY_SET = 0;
+
+  /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MML_GENERATOR__INSTRUCTIONS = 0;
+  int MML_GENERATOR__INSTRUCTIONS = 1;
+
+  /**
+   * The feature id for the '<em><b>Result Display Params Set</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET = 2;
 
   /**
    * The number of structural features of the '<em>MML Generator</em>' class.
@@ -84,7 +102,7 @@ public interface MyMMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MML_GENERATOR_FEATURE_COUNT = 1;
+  int MML_GENERATOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -106,6 +124,62 @@ public interface MyMMLPackage extends EPackage
   int INSTRUCTION_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.impl.StrategySetImpl <em>Strategy Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myMML.impl.StrategySetImpl
+   * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getStrategySet()
+   * @generated
+   */
+  int STRATEGY_SET = 2;
+
+  /**
+   * The feature id for the '<em><b>Strategy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRATEGY_SET__STRATEGY = 0;
+
+  /**
+   * The number of structural features of the '<em>Strategy Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRATEGY_SET_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.impl.ResultDisplayParamsSetImpl <em>Result Display Params Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myMML.impl.ResultDisplayParamsSetImpl
+   * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getResultDisplayParamsSet()
+   * @generated
+   */
+  int RESULT_DISPLAY_PARAMS_SET = 3;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_DISPLAY_PARAMS_SET__PARAMS = 0;
+
+  /**
+   * The number of structural features of the '<em>Result Display Params Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_DISPLAY_PARAMS_SET_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.impl.PutInImpl <em>Put In</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,7 +187,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getPutIn()
    * @generated
    */
-  int PUT_IN = 2;
+  int PUT_IN = 4;
 
   /**
    * The feature id for the '<em><b>Put Id</b></em>' attribute.
@@ -150,7 +224,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 3;
+  int ELEMENT = 5;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -169,7 +243,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getFileSet()
    * @generated
    */
-  int FILE_SET = 4;
+  int FILE_SET = 6;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -197,7 +271,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getPredictiveColumns()
    * @generated
    */
-  int PREDICTIVE_COLUMNS = 5;
+  int PREDICTIVE_COLUMNS = 7;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' attribute.
@@ -225,7 +299,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getCibleColumn()
    * @generated
    */
-  int CIBLE_COLUMN = 6;
+  int CIBLE_COLUMN = 8;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' attribute.
@@ -253,7 +327,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getTestValueSize()
    * @generated
    */
-  int TEST_VALUE_SIZE = 7;
+  int TEST_VALUE_SIZE = 9;
 
   /**
    * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -281,7 +355,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getTrainValueSize()
    * @generated
    */
-  int TRAIN_VALUE_SIZE = 8;
+  int TRAIN_VALUE_SIZE = 10;
 
   /**
    * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -309,7 +383,7 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getAlgorithmSet()
    * @generated
    */
-  int ALGORITHM_SET = 9;
+  int ALGORITHM_SET = 11;
 
   /**
    * The feature id for the '<em><b>Algo Name</b></em>' attribute.
@@ -337,7 +411,27 @@ public interface MyMMLPackage extends EPackage
    * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getAlgo()
    * @generated
    */
-  int ALGO = 10;
+  int ALGO = 12;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.Strategy <em>Strategy</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myMML.Strategy
+   * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getStrategy()
+   * @generated
+   */
+  int STRATEGY = 13;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myMML.DisplayParams <em>Display Params</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myMML.DisplayParams
+   * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getDisplayParams()
+   * @generated
+   */
+  int DISPLAY_PARAMS = 14;
 
 
   /**
@@ -351,6 +445,17 @@ public interface MyMMLPackage extends EPackage
   EClass getMMLGenerator();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myMML.MMLGenerator#getStrategySet <em>Strategy Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Strategy Set</em>'.
+   * @see org.xtext.example.mydsl1.myMML.MMLGenerator#getStrategySet()
+   * @see #getMMLGenerator()
+   * @generated
+   */
+  EReference getMMLGenerator_StrategySet();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myMML.MMLGenerator#getInstructions <em>Instructions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -362,6 +467,17 @@ public interface MyMMLPackage extends EPackage
   EReference getMMLGenerator_Instructions();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myMML.MMLGenerator#getResultDisplayParamsSet <em>Result Display Params Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Result Display Params Set</em>'.
+   * @see org.xtext.example.mydsl1.myMML.MMLGenerator#getResultDisplayParamsSet()
+   * @see #getMMLGenerator()
+   * @generated
+   */
+  EReference getMMLGenerator_ResultDisplayParamsSet();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl1.myMML.Instruction <em>Instruction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -370,6 +486,48 @@ public interface MyMMLPackage extends EPackage
    * @generated
    */
   EClass getInstruction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myMML.StrategySet <em>Strategy Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Strategy Set</em>'.
+   * @see org.xtext.example.mydsl1.myMML.StrategySet
+   * @generated
+   */
+  EClass getStrategySet();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myMML.StrategySet#getStrategy <em>Strategy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Strategy</em>'.
+   * @see org.xtext.example.mydsl1.myMML.StrategySet#getStrategy()
+   * @see #getStrategySet()
+   * @generated
+   */
+  EAttribute getStrategySet_Strategy();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet <em>Result Display Params Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Result Display Params Set</em>'.
+   * @see org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet
+   * @generated
+   */
+  EClass getResultDisplayParamsSet();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Params</em>'.
+   * @see org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet#getParams()
+   * @see #getResultDisplayParamsSet()
+   * @generated
+   */
+  EAttribute getResultDisplayParamsSet_Params();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl1.myMML.PutIn <em>Put In</em>}'.
@@ -550,6 +708,26 @@ public interface MyMMLPackage extends EPackage
   EEnum getAlgo();
 
   /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl1.myMML.Strategy <em>Strategy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Strategy</em>'.
+   * @see org.xtext.example.mydsl1.myMML.Strategy
+   * @generated
+   */
+  EEnum getStrategy();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl1.myMML.DisplayParams <em>Display Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Display Params</em>'.
+   * @see org.xtext.example.mydsl1.myMML.DisplayParams
+   * @generated
+   */
+  EEnum getDisplayParams();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -583,12 +761,28 @@ public interface MyMMLPackage extends EPackage
     EClass MML_GENERATOR = eINSTANCE.getMMLGenerator();
 
     /**
+     * The meta object literal for the '<em><b>Strategy Set</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MML_GENERATOR__STRATEGY_SET = eINSTANCE.getMMLGenerator_StrategySet();
+
+    /**
      * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MML_GENERATOR__INSTRUCTIONS = eINSTANCE.getMMLGenerator_Instructions();
+
+    /**
+     * The meta object literal for the '<em><b>Result Display Params Set</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET = eINSTANCE.getMMLGenerator_ResultDisplayParamsSet();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -599,6 +793,42 @@ public interface MyMMLPackage extends EPackage
      * @generated
      */
     EClass INSTRUCTION = eINSTANCE.getInstruction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.impl.StrategySetImpl <em>Strategy Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myMML.impl.StrategySetImpl
+     * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getStrategySet()
+     * @generated
+     */
+    EClass STRATEGY_SET = eINSTANCE.getStrategySet();
+
+    /**
+     * The meta object literal for the '<em><b>Strategy</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRATEGY_SET__STRATEGY = eINSTANCE.getStrategySet_Strategy();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.impl.ResultDisplayParamsSetImpl <em>Result Display Params Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myMML.impl.ResultDisplayParamsSetImpl
+     * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getResultDisplayParamsSet()
+     * @generated
+     */
+    EClass RESULT_DISPLAY_PARAMS_SET = eINSTANCE.getResultDisplayParamsSet();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESULT_DISPLAY_PARAMS_SET__PARAMS = eINSTANCE.getResultDisplayParamsSet_Params();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.impl.PutInImpl <em>Put In</em>}' class.
@@ -753,6 +983,26 @@ public interface MyMMLPackage extends EPackage
      * @generated
      */
     EEnum ALGO = eINSTANCE.getAlgo();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.Strategy <em>Strategy</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myMML.Strategy
+     * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getStrategy()
+     * @generated
+     */
+    EEnum STRATEGY = eINSTANCE.getStrategy();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myMML.DisplayParams <em>Display Params</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myMML.DisplayParams
+     * @see org.xtext.example.mydsl1.myMML.impl.MyMMLPackageImpl#getDisplayParams()
+     * @generated
+     */
+    EEnum DISPLAY_PARAMS = eINSTANCE.getDisplayParams();
 
   }
 

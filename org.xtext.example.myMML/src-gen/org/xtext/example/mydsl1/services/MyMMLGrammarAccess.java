@@ -27,18 +27,38 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class MMLGeneratorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.MMLGenerator");
-		private final Assignment cInstructionsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cInstructionsInstructionParserRuleCall_0 = (RuleCall)cInstructionsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cStrategySetAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStrategySetStrategySetParserRuleCall_0_0 = (RuleCall)cStrategySetAssignment_0.eContents().get(0);
+		private final Assignment cInstructionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstructionsInstructionParserRuleCall_1_0 = (RuleCall)cInstructionsAssignment_1.eContents().get(0);
+		private final Assignment cResultDisplayParamsSetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cResultDisplayParamsSetResultDisplayParamsSetParserRuleCall_2_0 = (RuleCall)cResultDisplayParamsSetAssignment_2.eContents().get(0);
 		
 		//MMLGenerator:
-		//	instructions+=Instruction+;
+		//	strategySet=StrategySet instructions+=Instruction* resultDisplayParamsSet=ResultDisplayParamsSet;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//instructions+=Instruction+
-		public Assignment getInstructionsAssignment() { return cInstructionsAssignment; }
+		//strategySet=StrategySet instructions+=Instruction* resultDisplayParamsSet=ResultDisplayParamsSet
+		public Group getGroup() { return cGroup; }
+		
+		//strategySet=StrategySet
+		public Assignment getStrategySetAssignment_0() { return cStrategySetAssignment_0; }
+		
+		//StrategySet
+		public RuleCall getStrategySetStrategySetParserRuleCall_0_0() { return cStrategySetStrategySetParserRuleCall_0_0; }
+		
+		//instructions+=Instruction*
+		public Assignment getInstructionsAssignment_1() { return cInstructionsAssignment_1; }
 		
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_0() { return cInstructionsInstructionParserRuleCall_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_1_0() { return cInstructionsInstructionParserRuleCall_1_0; }
+		
+		//resultDisplayParamsSet=ResultDisplayParamsSet
+		public Assignment getResultDisplayParamsSetAssignment_2() { return cResultDisplayParamsSetAssignment_2; }
+		
+		//ResultDisplayParamsSet
+		public RuleCall getResultDisplayParamsSetResultDisplayParamsSetParserRuleCall_2_0() { return cResultDisplayParamsSetResultDisplayParamsSetParserRuleCall_2_0; }
 	}
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.Instruction");
@@ -50,6 +70,52 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PutIn
 		public RuleCall getPutInParserRuleCall() { return cPutInParserRuleCall; }
+	}
+	public class StrategySetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.StrategySet");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStrategySetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cStrategyAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStrategyStrategyEnumRuleCall_1_0 = (RuleCall)cStrategyAssignment_1.eContents().get(0);
+		
+		//StrategySet:
+		//	'strategySet' strategy=Strategy;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'strategySet' strategy=Strategy
+		public Group getGroup() { return cGroup; }
+		
+		//'strategySet'
+		public Keyword getStrategySetKeyword_0() { return cStrategySetKeyword_0; }
+		
+		//strategy=Strategy
+		public Assignment getStrategyAssignment_1() { return cStrategyAssignment_1; }
+		
+		//Strategy
+		public RuleCall getStrategyStrategyEnumRuleCall_1_0() { return cStrategyStrategyEnumRuleCall_1_0; }
+	}
+	public class ResultDisplayParamsSetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.ResultDisplayParamsSet");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cResultDisplayParamsSetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cParamsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParamsDisplayParamsEnumRuleCall_1_0 = (RuleCall)cParamsAssignment_1.eContents().get(0);
+		
+		//ResultDisplayParamsSet:
+		//	'ResultDisplayParamsSet' params+=DisplayParams+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ResultDisplayParamsSet' params+=DisplayParams+
+		public Group getGroup() { return cGroup; }
+		
+		//'ResultDisplayParamsSet'
+		public Keyword getResultDisplayParamsSetKeyword_0() { return cResultDisplayParamsSetKeyword_0; }
+		
+		//params+=DisplayParams+
+		public Assignment getParamsAssignment_1() { return cParamsAssignment_1; }
+		
+		//DisplayParams
+		public RuleCall getParamsDisplayParamsEnumRuleCall_1_0() { return cParamsDisplayParamsEnumRuleCall_1_0; }
 	}
 	public class PutInElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.PutIn");
@@ -247,14 +313,13 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTrainValueSizeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLessThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSizeINTTerminalRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSizeGreaterThanSignKeyword_2_0 = (Keyword)cSizeAssignment_2.eContents().get(0);
 		
 		//TrainValueSize:
-		//	'trainValueSize' '<' size=INT '>';
+		//	'trainValueSize' '<' size='>';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'trainValueSize' '<' size=INT '>'
+		//'trainValueSize' '<' size='>'
 		public Group getGroup() { return cGroup; }
 		
 		//'trainValueSize'
@@ -263,14 +328,11 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'<'
 		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
 		
-		//size=INT
+		//size='>'
 		public Assignment getSizeAssignment_2() { return cSizeAssignment_2; }
 		
-		//INT
-		public RuleCall getSizeINTTerminalRuleCall_2_0() { return cSizeINTTerminalRuleCall_2_0; }
-		
 		//'>'
-		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
+		public Keyword getSizeGreaterThanSignKeyword_2_0() { return cSizeGreaterThanSignKeyword_2_0; }
 	}
 	public class AlgorithmSetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.AlgorithmSet");
@@ -347,9 +409,73 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'NaiveBayes'
 		public Keyword getNaiveBayesNaiveBayesKeyword_3_0() { return cNaiveBayesNaiveBayesKeyword_3_0; }
 	}
+	public class StrategyElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.Strategy");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cTrainingTestEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cTrainingTestTrainingTestKeyword_0_0 = (Keyword)cTrainingTestEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCrossValidationEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCrossValidationCrossValidationKeyword_1_0 = (Keyword)cCrossValidationEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Strategy:
+		//	TrainingTest | CrossValidation;
+		public EnumRule getRule() { return rule; }
+		
+		//TrainingTest | CrossValidation
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//TrainingTest
+		public EnumLiteralDeclaration getTrainingTestEnumLiteralDeclaration_0() { return cTrainingTestEnumLiteralDeclaration_0; }
+		
+		//'TrainingTest'
+		public Keyword getTrainingTestTrainingTestKeyword_0_0() { return cTrainingTestTrainingTestKeyword_0_0; }
+		
+		//CrossValidation
+		public EnumLiteralDeclaration getCrossValidationEnumLiteralDeclaration_1() { return cCrossValidationEnumLiteralDeclaration_1; }
+		
+		//'CrossValidation'
+		public Keyword getCrossValidationCrossValidationKeyword_1_0() { return cCrossValidationCrossValidationKeyword_1_0; }
+	}
+	public class DisplayParamsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyMML.DisplayParams");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPrecisionEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPrecisionPrecisionKeyword_0_0 = (Keyword)cPrecisionEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cRecallEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cRecallRecallKeyword_1_0 = (Keyword)cRecallEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cF1EnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cF1F1Keyword_2_0 = (Keyword)cF1EnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum DisplayParams:
+		//	Precision | Recall | f1;
+		public EnumRule getRule() { return rule; }
+		
+		//Precision | Recall | f1
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Precision
+		public EnumLiteralDeclaration getPrecisionEnumLiteralDeclaration_0() { return cPrecisionEnumLiteralDeclaration_0; }
+		
+		//'Precision'
+		public Keyword getPrecisionPrecisionKeyword_0_0() { return cPrecisionPrecisionKeyword_0_0; }
+		
+		//Recall
+		public EnumLiteralDeclaration getRecallEnumLiteralDeclaration_1() { return cRecallEnumLiteralDeclaration_1; }
+		
+		//'Recall'
+		public Keyword getRecallRecallKeyword_1_0() { return cRecallRecallKeyword_1_0; }
+		
+		//f1
+		public EnumLiteralDeclaration getF1EnumLiteralDeclaration_2() { return cF1EnumLiteralDeclaration_2; }
+		
+		//'f1'
+		public Keyword getF1F1Keyword_2_0() { return cF1F1Keyword_2_0; }
+	}
 	
 	private final MMLGeneratorElements pMMLGenerator;
 	private final InstructionElements pInstruction;
+	private final StrategySetElements pStrategySet;
+	private final ResultDisplayParamsSetElements pResultDisplayParamsSet;
 	private final PutInElements pPutIn;
 	private final ElementElements pElement;
 	private final FileSetElements pFileSet;
@@ -359,6 +485,8 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TrainValueSizeElements pTrainValueSize;
 	private final AlgorithmSetElements pAlgorithmSet;
 	private final AlgoElements eAlgo;
+	private final StrategyElements eStrategy;
+	private final DisplayParamsElements eDisplayParams;
 	
 	private final Grammar grammar;
 	
@@ -371,6 +499,8 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pMMLGenerator = new MMLGeneratorElements();
 		this.pInstruction = new InstructionElements();
+		this.pStrategySet = new StrategySetElements();
+		this.pResultDisplayParamsSet = new ResultDisplayParamsSetElements();
 		this.pPutIn = new PutInElements();
 		this.pElement = new ElementElements();
 		this.pFileSet = new FileSetElements();
@@ -380,6 +510,8 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTrainValueSize = new TrainValueSizeElements();
 		this.pAlgorithmSet = new AlgorithmSetElements();
 		this.eAlgo = new AlgoElements();
+		this.eStrategy = new StrategyElements();
+		this.eDisplayParams = new DisplayParamsElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -410,7 +542,7 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//MMLGenerator:
-	//	instructions+=Instruction+;
+	//	strategySet=StrategySet instructions+=Instruction* resultDisplayParamsSet=ResultDisplayParamsSet;
 	public MMLGeneratorElements getMMLGeneratorAccess() {
 		return pMMLGenerator;
 	}
@@ -427,6 +559,26 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getInstructionRule() {
 		return getInstructionAccess().getRule();
+	}
+	
+	//StrategySet:
+	//	'strategySet' strategy=Strategy;
+	public StrategySetElements getStrategySetAccess() {
+		return pStrategySet;
+	}
+	
+	public ParserRule getStrategySetRule() {
+		return getStrategySetAccess().getRule();
+	}
+	
+	//ResultDisplayParamsSet:
+	//	'ResultDisplayParamsSet' params+=DisplayParams+;
+	public ResultDisplayParamsSetElements getResultDisplayParamsSetAccess() {
+		return pResultDisplayParamsSet;
+	}
+	
+	public ParserRule getResultDisplayParamsSetRule() {
+		return getResultDisplayParamsSetAccess().getRule();
 	}
 	
 	//PutIn:
@@ -490,7 +642,7 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TrainValueSize:
-	//	'trainValueSize' '<' size=INT '>';
+	//	'trainValueSize' '<' size='>';
 	public TrainValueSizeElements getTrainValueSizeAccess() {
 		return pTrainValueSize;
 	}
@@ -517,6 +669,26 @@ public class MyMMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getAlgoRule() {
 		return getAlgoAccess().getRule();
+	}
+	
+	//enum Strategy:
+	//	TrainingTest | CrossValidation;
+	public StrategyElements getStrategyAccess() {
+		return eStrategy;
+	}
+	
+	public EnumRule getStrategyRule() {
+		return getStrategyAccess().getRule();
+	}
+	
+	//enum DisplayParams:
+	//	Precision | Recall | f1;
+	public DisplayParamsElements getDisplayParamsAccess() {
+		return eDisplayParams;
+	}
+	
+	public EnumRule getDisplayParamsRule() {
+		return getDisplayParamsAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -21,6 +21,8 @@ import org.xtext.example.mydsl1.myMML.MMLGenerator;
 import org.xtext.example.mydsl1.myMML.MyMMLPackage;
 import org.xtext.example.mydsl1.myMML.PredictiveColumns;
 import org.xtext.example.mydsl1.myMML.PutIn;
+import org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet;
+import org.xtext.example.mydsl1.myMML.StrategySet;
 import org.xtext.example.mydsl1.myMML.TestValueSize;
 import org.xtext.example.mydsl1.myMML.TrainValueSize;
 import org.xtext.example.mydsl1.services.MyMMLGrammarAccess;
@@ -56,6 +58,12 @@ public class MyMMLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyMMLPackage.PUT_IN:
 				sequence_PutIn(context, (PutIn) semanticObject); 
+				return; 
+			case MyMMLPackage.RESULT_DISPLAY_PARAMS_SET:
+				sequence_ResultDisplayParamsSet(context, (ResultDisplayParamsSet) semanticObject); 
+				return; 
+			case MyMMLPackage.STRATEGY_SET:
+				sequence_StrategySet(context, (StrategySet) semanticObject); 
 				return; 
 			case MyMMLPackage.TEST_VALUE_SIZE:
 				sequence_TestValueSize(context, (TestValueSize) semanticObject); 
@@ -130,7 +138,7 @@ public class MyMMLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     MMLGenerator returns MMLGenerator
 	 *
 	 * Constraint:
-	 *     instructions+=Instruction+
+	 *     (strategySet=StrategySet instructions+=Instruction* resultDisplayParamsSet=ResultDisplayParamsSet)
 	 */
 	protected void sequence_MMLGenerator(ISerializationContext context, MMLGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -180,6 +188,36 @@ public class MyMMLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     ResultDisplayParamsSet returns ResultDisplayParamsSet
+	 *
+	 * Constraint:
+	 *     params+=DisplayParams+
+	 */
+	protected void sequence_ResultDisplayParamsSet(ISerializationContext context, ResultDisplayParamsSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StrategySet returns StrategySet
+	 *
+	 * Constraint:
+	 *     strategy=Strategy
+	 */
+	protected void sequence_StrategySet(ISerializationContext context, StrategySet semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyMMLPackage.Literals.STRATEGY_SET__STRATEGY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyMMLPackage.Literals.STRATEGY_SET__STRATEGY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStrategySetAccess().getStrategyStrategyEnumRuleCall_1_0(), semanticObject.getStrategy());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Element returns TestValueSize
 	 *     TestValueSize returns TestValueSize
 	 *
@@ -203,7 +241,7 @@ public class MyMMLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     TrainValueSize returns TrainValueSize
 	 *
 	 * Constraint:
-	 *     size=INT
+	 *     size='>'
 	 */
 	protected void sequence_TrainValueSize(ISerializationContext context, TrainValueSize semanticObject) {
 		if (errorAcceptor != null) {
@@ -211,7 +249,7 @@ public class MyMMLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyMMLPackage.Literals.TRAIN_VALUE_SIZE__SIZE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTrainValueSizeAccess().getSizeINTTerminalRuleCall_2_0(), semanticObject.getSize());
+		feeder.accept(grammarAccess.getTrainValueSizeAccess().getSizeGreaterThanSignKeyword_2_0(), semanticObject.getSize());
 		feeder.finish();
 	}
 	

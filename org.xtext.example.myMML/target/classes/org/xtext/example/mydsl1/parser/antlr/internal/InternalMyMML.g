@@ -78,23 +78,63 @@ ruleMMLGenerator returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getMMLGeneratorAccess().getInstructionsInstructionParserRuleCall_0());
-			}
-			lv_instructions_0_0=ruleInstruction
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getStrategySetStrategySetParserRuleCall_0_0());
 				}
-				add(
-					$current,
-					"instructions",
-					lv_instructions_0_0,
-					"org.xtext.example.mydsl1.MyMML.Instruction");
-				afterParserOrEnumRuleCall();
-			}
+				lv_strategySet_0_0=ruleStrategySet
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+					}
+					set(
+						$current,
+						"strategySet",
+						lv_strategySet_0_0,
+						"org.xtext.example.mydsl1.MyMML.StrategySet");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
-	)+
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getInstructionsInstructionParserRuleCall_1_0());
+				}
+				lv_instructions_1_0=ruleInstruction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+					}
+					add(
+						$current,
+						"instructions",
+						lv_instructions_1_0,
+						"org.xtext.example.mydsl1.MyMML.Instruction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getResultDisplayParamsSetResultDisplayParamsSetParserRuleCall_2_0());
+				}
+				lv_resultDisplayParamsSet_2_0=ruleResultDisplayParamsSet
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+					}
+					set(
+						$current,
+						"resultDisplayParamsSet",
+						lv_resultDisplayParamsSet_2_0,
+						"org.xtext.example.mydsl1.MyMML.ResultDisplayParamsSet");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
 ;
 
 // Entry rule entryRuleInstruction
@@ -120,6 +160,90 @@ ruleInstruction returns [EObject current=null]
 		$current = $this_PutIn_0.current;
 		afterParserOrEnumRuleCall();
 	}
+;
+
+// Entry rule entryRuleStrategySet
+entryRuleStrategySet returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStrategySetRule()); }
+	iv_ruleStrategySet=ruleStrategySet
+	{ $current=$iv_ruleStrategySet.current; }
+	EOF;
+
+// Rule StrategySet
+ruleStrategySet returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='strategySet'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStrategySetAccess().getStrategySetKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStrategySetAccess().getStrategyStrategyEnumRuleCall_1_0());
+				}
+				lv_strategy_1_0=ruleStrategy
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStrategySetRule());
+					}
+					set(
+						$current,
+						"strategy",
+						lv_strategy_1_0,
+						"org.xtext.example.mydsl1.MyMML.Strategy");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResultDisplayParamsSet
+entryRuleResultDisplayParamsSet returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResultDisplayParamsSetRule()); }
+	iv_ruleResultDisplayParamsSet=ruleResultDisplayParamsSet
+	{ $current=$iv_ruleResultDisplayParamsSet.current; }
+	EOF;
+
+// Rule ResultDisplayParamsSet
+ruleResultDisplayParamsSet returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ResultDisplayParamsSet'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResultDisplayParamsSetAccess().getResultDisplayParamsSetKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResultDisplayParamsSetAccess().getParamsDisplayParamsEnumRuleCall_1_0());
+				}
+				lv_params_1_0=ruleDisplayParams
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResultDisplayParamsSetRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_1_0,
+						"org.xtext.example.mydsl1.MyMML.DisplayParams");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
 ;
 
 // Entry rule entryRulePutIn
@@ -476,26 +600,18 @@ ruleTrainValueSize returns [EObject current=null]
 		}
 		(
 			(
-				lv_size_2_0=RULE_INT
+				lv_size_2_0='>'
 				{
-					newLeafNode(lv_size_2_0, grammarAccess.getTrainValueSizeAccess().getSizeINTTerminalRuleCall_2_0());
+					newLeafNode(lv_size_2_0, grammarAccess.getTrainValueSizeAccess().getSizeGreaterThanSignKeyword_2_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getTrainValueSizeRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"size",
-						lv_size_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+					setWithLastConsumed($current, "size", lv_size_2_0, ">");
 				}
 			)
 		)
-		otherlv_3='>'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getTrainValueSizeAccess().getGreaterThanSignKeyword_3());
-		}
 	)
 ;
 
@@ -587,6 +703,68 @@ ruleAlgo returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getAlgoAccess().getNaiveBayesEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_3, grammarAccess.getAlgoAccess().getNaiveBayesEnumLiteralDeclaration_3());
+			}
+		)
+	)
+;
+
+// Rule Strategy
+ruleStrategy returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='TrainingTest'
+			{
+				$current = grammarAccess.getStrategyAccess().getTrainingTestEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getStrategyAccess().getTrainingTestEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='CrossValidation'
+			{
+				$current = grammarAccess.getStrategyAccess().getCrossValidationEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getStrategyAccess().getCrossValidationEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
+// Rule DisplayParams
+ruleDisplayParams returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='Precision'
+			{
+				$current = grammarAccess.getDisplayParamsAccess().getPrecisionEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getDisplayParamsAccess().getPrecisionEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='Recall'
+			{
+				$current = grammarAccess.getDisplayParamsAccess().getRecallEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getDisplayParamsAccess().getRecallEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='f1'
+			{
+				$current = grammarAccess.getDisplayParamsAccess().getF1EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getDisplayParamsAccess().getF1EnumLiteralDeclaration_2());
 			}
 		)
 	)

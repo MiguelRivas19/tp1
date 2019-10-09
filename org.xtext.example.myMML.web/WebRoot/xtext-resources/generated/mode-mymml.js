@@ -1,6 +1,6 @@
 define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], function(oop, mText, mTextHighlightRules) {
 	var HighlightRules = function() {
-		var keywords = "CibleColumn|DecisionTreeClassifier|J48|NaiveBayes|SVM|algorithmSet|fileSet|predictiveColumns|putIn|testValueSize|trainValueSize";
+		var keywords = "CibleColumn|CrossValidation|DecisionTreeClassifier|J48|NaiveBayes|Precision|Recall|ResultDisplayParamsSet|SVM|TrainingTest|algorithmSet|f1|fileSet|predictiveColumns|putIn|strategySet|testValueSize|trainValueSize";
 		this.$rules = {
 			"start": [
 				{token: "comment", regex: "\\/\\/.*$"},

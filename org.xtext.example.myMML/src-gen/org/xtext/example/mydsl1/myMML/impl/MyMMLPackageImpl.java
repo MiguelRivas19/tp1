@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.example.mydsl1.myMML.Algo;
 import org.xtext.example.mydsl1.myMML.AlgorithmSet;
 import org.xtext.example.mydsl1.myMML.CibleColumn;
+import org.xtext.example.mydsl1.myMML.DisplayParams;
 import org.xtext.example.mydsl1.myMML.Element;
 import org.xtext.example.mydsl1.myMML.FileSet;
 import org.xtext.example.mydsl1.myMML.Instruction;
@@ -22,6 +23,9 @@ import org.xtext.example.mydsl1.myMML.MyMMLFactory;
 import org.xtext.example.mydsl1.myMML.MyMMLPackage;
 import org.xtext.example.mydsl1.myMML.PredictiveColumns;
 import org.xtext.example.mydsl1.myMML.PutIn;
+import org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet;
+import org.xtext.example.mydsl1.myMML.Strategy;
+import org.xtext.example.mydsl1.myMML.StrategySet;
 import org.xtext.example.mydsl1.myMML.TestValueSize;
 import org.xtext.example.mydsl1.myMML.TrainValueSize;
 
@@ -46,6 +50,20 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
    * @generated
    */
   private EClass instructionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass strategySetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resultDisplayParamsSetEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,6 +127,20 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
    * @generated
    */
   private EEnum algoEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum strategyEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum displayParamsEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -190,9 +222,31 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
    * @generated
    */
   @Override
-  public EReference getMMLGenerator_Instructions()
+  public EReference getMMLGenerator_StrategySet()
   {
     return (EReference)mmlGeneratorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMMLGenerator_Instructions()
+  {
+    return (EReference)mmlGeneratorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMMLGenerator_ResultDisplayParamsSet()
+  {
+    return (EReference)mmlGeneratorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -204,6 +258,50 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
   public EClass getInstruction()
   {
     return instructionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStrategySet()
+  {
+    return strategySetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStrategySet_Strategy()
+  {
+    return (EAttribute)strategySetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResultDisplayParamsSet()
+  {
+    return resultDisplayParamsSetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResultDisplayParamsSet_Params()
+  {
+    return (EAttribute)resultDisplayParamsSetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,6 +497,28 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
    * @generated
    */
   @Override
+  public EEnum getStrategy()
+  {
+    return strategyEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getDisplayParams()
+  {
+    return displayParamsEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public MyMMLFactory getMyMMLFactory()
   {
     return (MyMMLFactory)getEFactoryInstance();
@@ -425,9 +545,17 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
 
     // Create classes and their features
     mmlGeneratorEClass = createEClass(MML_GENERATOR);
+    createEReference(mmlGeneratorEClass, MML_GENERATOR__STRATEGY_SET);
     createEReference(mmlGeneratorEClass, MML_GENERATOR__INSTRUCTIONS);
+    createEReference(mmlGeneratorEClass, MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET);
 
     instructionEClass = createEClass(INSTRUCTION);
+
+    strategySetEClass = createEClass(STRATEGY_SET);
+    createEAttribute(strategySetEClass, STRATEGY_SET__STRATEGY);
+
+    resultDisplayParamsSetEClass = createEClass(RESULT_DISPLAY_PARAMS_SET);
+    createEAttribute(resultDisplayParamsSetEClass, RESULT_DISPLAY_PARAMS_SET__PARAMS);
 
     putInEClass = createEClass(PUT_IN);
     createEAttribute(putInEClass, PUT_IN__PUT_ID);
@@ -455,6 +583,8 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
 
     // Create enums
     algoEEnum = createEEnum(ALGO);
+    strategyEEnum = createEEnum(STRATEGY);
+    displayParamsEEnum = createEEnum(DISPLAY_PARAMS);
   }
 
   /**
@@ -496,9 +626,17 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(mmlGeneratorEClass, MMLGenerator.class, "MMLGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMMLGenerator_StrategySet(), this.getStrategySet(), null, "strategySet", null, 0, 1, MMLGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMMLGenerator_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, MMLGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMMLGenerator_ResultDisplayParamsSet(), this.getResultDisplayParamsSet(), null, "resultDisplayParamsSet", null, 0, 1, MMLGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(strategySetEClass, StrategySet.class, "StrategySet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStrategySet_Strategy(), this.getStrategy(), "strategy", null, 0, 1, StrategySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resultDisplayParamsSetEClass, ResultDisplayParamsSet.class, "ResultDisplayParamsSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResultDisplayParamsSet_Params(), this.getDisplayParams(), "params", null, 0, -1, ResultDisplayParamsSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(putInEClass, PutIn.class, "PutIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPutIn_PutId(), ecorePackage.getEString(), "putId", null, 0, 1, PutIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -519,7 +657,7 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
     initEAttribute(getTestValueSize_Size(), ecorePackage.getEInt(), "size", null, 0, 1, TestValueSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(trainValueSizeEClass, TrainValueSize.class, "TrainValueSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTrainValueSize_Size(), ecorePackage.getEInt(), "size", null, 0, 1, TrainValueSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTrainValueSize_Size(), ecorePackage.getEString(), "size", null, 0, 1, TrainValueSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algorithmSetEClass, AlgorithmSet.class, "AlgorithmSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAlgorithmSet_AlgoName(), this.getAlgo(), "algoName", null, 0, 1, AlgorithmSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -530,6 +668,15 @@ public class MyMMLPackageImpl extends EPackageImpl implements MyMMLPackage
     addEEnumLiteral(algoEEnum, Algo.SVM);
     addEEnumLiteral(algoEEnum, Algo.J48);
     addEEnumLiteral(algoEEnum, Algo.NAIVE_BAYES);
+
+    initEEnum(strategyEEnum, Strategy.class, "Strategy");
+    addEEnumLiteral(strategyEEnum, Strategy.TRAINING_TEST);
+    addEEnumLiteral(strategyEEnum, Strategy.CROSS_VALIDATION);
+
+    initEEnum(displayParamsEEnum, DisplayParams.class, "DisplayParams");
+    addEEnumLiteral(displayParamsEEnum, DisplayParams.PRECISION);
+    addEEnumLiteral(displayParamsEEnum, DisplayParams.RECALL);
+    addEEnumLiteral(displayParamsEEnum, DisplayParams.F1);
 
     // Create resource
     createResource(eNS_URI);

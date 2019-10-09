@@ -5,6 +5,7 @@ package org.xtext.example.mydsl1.myMML.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -20,6 +22,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.mydsl1.myMML.Instruction;
 import org.xtext.example.mydsl1.myMML.MMLGenerator;
 import org.xtext.example.mydsl1.myMML.MyMMLPackage;
+import org.xtext.example.mydsl1.myMML.ResultDisplayParamsSet;
+import org.xtext.example.mydsl1.myMML.StrategySet;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,13 +33,25 @@ import org.xtext.example.mydsl1.myMML.MyMMLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl1.myMML.impl.MMLGeneratorImpl#getStrategySet <em>Strategy Set</em>}</li>
  *   <li>{@link org.xtext.example.mydsl1.myMML.impl.MMLGeneratorImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl1.myMML.impl.MMLGeneratorImpl#getResultDisplayParamsSet <em>Result Display Params Set</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MMLGenerator
 {
+  /**
+   * The cached value of the '{@link #getStrategySet() <em>Strategy Set</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStrategySet()
+   * @generated
+   * @ordered
+   */
+  protected StrategySet strategySet;
+
   /**
    * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -45,6 +61,16 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
    * @ordered
    */
   protected EList<Instruction> instructions;
+
+  /**
+   * The cached value of the '{@link #getResultDisplayParamsSet() <em>Result Display Params Set</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResultDisplayParamsSet()
+   * @generated
+   * @ordered
+   */
+  protected ResultDisplayParamsSet resultDisplayParamsSet;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,6 +99,56 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
    * @generated
    */
   @Override
+  public StrategySet getStrategySet()
+  {
+    return strategySet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStrategySet(StrategySet newStrategySet, NotificationChain msgs)
+  {
+    StrategySet oldStrategySet = strategySet;
+    strategySet = newStrategySet;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyMMLPackage.MML_GENERATOR__STRATEGY_SET, oldStrategySet, newStrategySet);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStrategySet(StrategySet newStrategySet)
+  {
+    if (newStrategySet != strategySet)
+    {
+      NotificationChain msgs = null;
+      if (strategySet != null)
+        msgs = ((InternalEObject)strategySet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyMMLPackage.MML_GENERATOR__STRATEGY_SET, null, msgs);
+      if (newStrategySet != null)
+        msgs = ((InternalEObject)newStrategySet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyMMLPackage.MML_GENERATOR__STRATEGY_SET, null, msgs);
+      msgs = basicSetStrategySet(newStrategySet, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyMMLPackage.MML_GENERATOR__STRATEGY_SET, newStrategySet, newStrategySet));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Instruction> getInstructions()
   {
     if (instructions == null)
@@ -88,12 +164,66 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
    * @generated
    */
   @Override
+  public ResultDisplayParamsSet getResultDisplayParamsSet()
+  {
+    return resultDisplayParamsSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetResultDisplayParamsSet(ResultDisplayParamsSet newResultDisplayParamsSet, NotificationChain msgs)
+  {
+    ResultDisplayParamsSet oldResultDisplayParamsSet = resultDisplayParamsSet;
+    resultDisplayParamsSet = newResultDisplayParamsSet;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET, oldResultDisplayParamsSet, newResultDisplayParamsSet);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setResultDisplayParamsSet(ResultDisplayParamsSet newResultDisplayParamsSet)
+  {
+    if (newResultDisplayParamsSet != resultDisplayParamsSet)
+    {
+      NotificationChain msgs = null;
+      if (resultDisplayParamsSet != null)
+        msgs = ((InternalEObject)resultDisplayParamsSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET, null, msgs);
+      if (newResultDisplayParamsSet != null)
+        msgs = ((InternalEObject)newResultDisplayParamsSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET, null, msgs);
+      msgs = basicSetResultDisplayParamsSet(newResultDisplayParamsSet, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET, newResultDisplayParamsSet, newResultDisplayParamsSet));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case MyMMLPackage.MML_GENERATOR__STRATEGY_SET:
+        return basicSetStrategySet(null, msgs);
       case MyMMLPackage.MML_GENERATOR__INSTRUCTIONS:
         return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
+      case MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET:
+        return basicSetResultDisplayParamsSet(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +238,12 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
   {
     switch (featureID)
     {
+      case MyMMLPackage.MML_GENERATOR__STRATEGY_SET:
+        return getStrategySet();
       case MyMMLPackage.MML_GENERATOR__INSTRUCTIONS:
         return getInstructions();
+      case MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET:
+        return getResultDisplayParamsSet();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +259,15 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
   {
     switch (featureID)
     {
+      case MyMMLPackage.MML_GENERATOR__STRATEGY_SET:
+        setStrategySet((StrategySet)newValue);
+        return;
       case MyMMLPackage.MML_GENERATOR__INSTRUCTIONS:
         getInstructions().clear();
         getInstructions().addAll((Collection<? extends Instruction>)newValue);
+        return;
+      case MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET:
+        setResultDisplayParamsSet((ResultDisplayParamsSet)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +283,14 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
   {
     switch (featureID)
     {
+      case MyMMLPackage.MML_GENERATOR__STRATEGY_SET:
+        setStrategySet((StrategySet)null);
+        return;
       case MyMMLPackage.MML_GENERATOR__INSTRUCTIONS:
         getInstructions().clear();
+        return;
+      case MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET:
+        setResultDisplayParamsSet((ResultDisplayParamsSet)null);
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +306,12 @@ public class MMLGeneratorImpl extends MinimalEObjectImpl.Container implements MM
   {
     switch (featureID)
     {
+      case MyMMLPackage.MML_GENERATOR__STRATEGY_SET:
+        return strategySet != null;
       case MyMMLPackage.MML_GENERATOR__INSTRUCTIONS:
         return instructions != null && !instructions.isEmpty();
+      case MyMMLPackage.MML_GENERATOR__RESULT_DISPLAY_PARAMS_SET:
+        return resultDisplayParamsSet != null;
     }
     return super.eIsSet(featureID);
   }

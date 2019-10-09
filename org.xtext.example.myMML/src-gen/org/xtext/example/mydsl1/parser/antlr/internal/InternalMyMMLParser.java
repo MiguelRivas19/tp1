@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyMMLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'putIn'", "'fileSet'", "'<'", "'>'", "'predictiveColumns'", "'CibleColumn'", "'testValueSize'", "'trainValueSize'", "'algorithmSet'", "'DecisionTreeClassifier'", "'SVM'", "'J48'", "'NaiveBayes'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'strategySet'", "'ResultDisplayParamsSet'", "'putIn'", "'fileSet'", "'<'", "'>'", "'predictiveColumns'", "'CibleColumn'", "'testValueSize'", "'trainValueSize'", "'algorithmSet'", "'DecisionTreeClassifier'", "'SVM'", "'J48'", "'NaiveBayes'", "'TrainingTest'", "'CrossValidation'", "'Precision'", "'Recall'", "'f1'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -36,13 +36,20 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -122,58 +129,95 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMMLGenerator"
-    // InternalMyMML.g:72:1: ruleMMLGenerator returns [EObject current=null] : ( (lv_instructions_0_0= ruleInstruction ) )+ ;
+    // InternalMyMML.g:72:1: ruleMMLGenerator returns [EObject current=null] : ( ( (lv_strategySet_0_0= ruleStrategySet ) ) ( (lv_instructions_1_0= ruleInstruction ) )* ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) ) ) ;
     public final EObject ruleMMLGenerator() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_instructions_0_0 = null;
+        EObject lv_strategySet_0_0 = null;
+
+        EObject lv_instructions_1_0 = null;
+
+        EObject lv_resultDisplayParamsSet_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMyMML.g:78:2: ( ( (lv_instructions_0_0= ruleInstruction ) )+ )
-            // InternalMyMML.g:79:2: ( (lv_instructions_0_0= ruleInstruction ) )+
+            // InternalMyMML.g:78:2: ( ( ( (lv_strategySet_0_0= ruleStrategySet ) ) ( (lv_instructions_1_0= ruleInstruction ) )* ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) ) ) )
+            // InternalMyMML.g:79:2: ( ( (lv_strategySet_0_0= ruleStrategySet ) ) ( (lv_instructions_1_0= ruleInstruction ) )* ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) ) )
             {
-            // InternalMyMML.g:79:2: ( (lv_instructions_0_0= ruleInstruction ) )+
-            int cnt1=0;
+            // InternalMyMML.g:79:2: ( ( (lv_strategySet_0_0= ruleStrategySet ) ) ( (lv_instructions_1_0= ruleInstruction ) )* ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) ) )
+            // InternalMyMML.g:80:3: ( (lv_strategySet_0_0= ruleStrategySet ) ) ( (lv_instructions_1_0= ruleInstruction ) )* ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) )
+            {
+            // InternalMyMML.g:80:3: ( (lv_strategySet_0_0= ruleStrategySet ) )
+            // InternalMyMML.g:81:4: (lv_strategySet_0_0= ruleStrategySet )
+            {
+            // InternalMyMML.g:81:4: (lv_strategySet_0_0= ruleStrategySet )
+            // InternalMyMML.g:82:5: lv_strategySet_0_0= ruleStrategySet
+            {
+
+            					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getStrategySetStrategySetParserRuleCall_0_0());
+            				
+            pushFollow(FOLLOW_3);
+            lv_strategySet_0_0=ruleStrategySet();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+            					}
+            					set(
+            						current,
+            						"strategySet",
+            						lv_strategySet_0_0,
+            						"org.xtext.example.mydsl1.MyMML.StrategySet");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalMyMML.g:99:3: ( (lv_instructions_1_0= ruleInstruction ) )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalMyMML.g:80:3: (lv_instructions_0_0= ruleInstruction )
+            	    // InternalMyMML.g:100:4: (lv_instructions_1_0= ruleInstruction )
             	    {
-            	    // InternalMyMML.g:80:3: (lv_instructions_0_0= ruleInstruction )
-            	    // InternalMyMML.g:81:4: lv_instructions_0_0= ruleInstruction
+            	    // InternalMyMML.g:100:4: (lv_instructions_1_0= ruleInstruction )
+            	    // InternalMyMML.g:101:5: lv_instructions_1_0= ruleInstruction
             	    {
 
-            	    				newCompositeNode(grammarAccess.getMMLGeneratorAccess().getInstructionsInstructionParserRuleCall_0());
-            	    			
+            	    					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getInstructionsInstructionParserRuleCall_1_0());
+            	    				
             	    pushFollow(FOLLOW_3);
-            	    lv_instructions_0_0=ruleInstruction();
+            	    lv_instructions_1_0=ruleInstruction();
 
             	    state._fsp--;
 
 
-            	    				if (current==null) {
-            	    					current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
-            	    				}
-            	    				add(
-            	    					current,
-            	    					"instructions",
-            	    					lv_instructions_0_0,
-            	    					"org.xtext.example.mydsl1.MyMML.Instruction");
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"instructions",
+            	    						lv_instructions_1_0,
+            	    						"org.xtext.example.mydsl1.MyMML.Instruction");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
             	    }
 
@@ -182,13 +226,43 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
+            	    break loop1;
                 }
-                cnt1++;
             } while (true);
+
+            // InternalMyMML.g:118:3: ( (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet ) )
+            // InternalMyMML.g:119:4: (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet )
+            {
+            // InternalMyMML.g:119:4: (lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet )
+            // InternalMyMML.g:120:5: lv_resultDisplayParamsSet_2_0= ruleResultDisplayParamsSet
+            {
+
+            					newCompositeNode(grammarAccess.getMMLGeneratorAccess().getResultDisplayParamsSetResultDisplayParamsSetParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_resultDisplayParamsSet_2_0=ruleResultDisplayParamsSet();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMMLGeneratorRule());
+            					}
+            					set(
+            						current,
+            						"resultDisplayParamsSet",
+            						lv_resultDisplayParamsSet_2_0,
+            						"org.xtext.example.mydsl1.MyMML.ResultDisplayParamsSet");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
 
 
             }
@@ -210,7 +284,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInstruction"
-    // InternalMyMML.g:101:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
+    // InternalMyMML.g:141:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
     public final EObject entryRuleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -218,8 +292,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:101:52: (iv_ruleInstruction= ruleInstruction EOF )
-            // InternalMyMML.g:102:2: iv_ruleInstruction= ruleInstruction EOF
+            // InternalMyMML.g:141:52: (iv_ruleInstruction= ruleInstruction EOF )
+            // InternalMyMML.g:142:2: iv_ruleInstruction= ruleInstruction EOF
             {
              newCompositeNode(grammarAccess.getInstructionRule()); 
             pushFollow(FOLLOW_1);
@@ -246,7 +320,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstruction"
-    // InternalMyMML.g:108:1: ruleInstruction returns [EObject current=null] : this_PutIn_0= rulePutIn ;
+    // InternalMyMML.g:148:1: ruleInstruction returns [EObject current=null] : this_PutIn_0= rulePutIn ;
     public final EObject ruleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -257,8 +331,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:114:2: (this_PutIn_0= rulePutIn )
-            // InternalMyMML.g:115:2: this_PutIn_0= rulePutIn
+            // InternalMyMML.g:154:2: (this_PutIn_0= rulePutIn )
+            // InternalMyMML.g:155:2: this_PutIn_0= rulePutIn
             {
 
             		newCompositeNode(grammarAccess.getInstructionAccess().getPutInParserRuleCall());
@@ -291,8 +365,255 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleInstruction"
 
 
+    // $ANTLR start "entryRuleStrategySet"
+    // InternalMyMML.g:166:1: entryRuleStrategySet returns [EObject current=null] : iv_ruleStrategySet= ruleStrategySet EOF ;
+    public final EObject entryRuleStrategySet() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleStrategySet = null;
+
+
+        try {
+            // InternalMyMML.g:166:52: (iv_ruleStrategySet= ruleStrategySet EOF )
+            // InternalMyMML.g:167:2: iv_ruleStrategySet= ruleStrategySet EOF
+            {
+             newCompositeNode(grammarAccess.getStrategySetRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleStrategySet=ruleStrategySet();
+
+            state._fsp--;
+
+             current =iv_ruleStrategySet; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleStrategySet"
+
+
+    // $ANTLR start "ruleStrategySet"
+    // InternalMyMML.g:173:1: ruleStrategySet returns [EObject current=null] : (otherlv_0= 'strategySet' ( (lv_strategy_1_0= ruleStrategy ) ) ) ;
+    public final EObject ruleStrategySet() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Enumerator lv_strategy_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMyMML.g:179:2: ( (otherlv_0= 'strategySet' ( (lv_strategy_1_0= ruleStrategy ) ) ) )
+            // InternalMyMML.g:180:2: (otherlv_0= 'strategySet' ( (lv_strategy_1_0= ruleStrategy ) ) )
+            {
+            // InternalMyMML.g:180:2: (otherlv_0= 'strategySet' ( (lv_strategy_1_0= ruleStrategy ) ) )
+            // InternalMyMML.g:181:3: otherlv_0= 'strategySet' ( (lv_strategy_1_0= ruleStrategy ) )
+            {
+            otherlv_0=(Token)match(input,11,FOLLOW_4); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getStrategySetAccess().getStrategySetKeyword_0());
+            		
+            // InternalMyMML.g:185:3: ( (lv_strategy_1_0= ruleStrategy ) )
+            // InternalMyMML.g:186:4: (lv_strategy_1_0= ruleStrategy )
+            {
+            // InternalMyMML.g:186:4: (lv_strategy_1_0= ruleStrategy )
+            // InternalMyMML.g:187:5: lv_strategy_1_0= ruleStrategy
+            {
+
+            					newCompositeNode(grammarAccess.getStrategySetAccess().getStrategyStrategyEnumRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_strategy_1_0=ruleStrategy();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getStrategySetRule());
+            					}
+            					set(
+            						current,
+            						"strategy",
+            						lv_strategy_1_0,
+            						"org.xtext.example.mydsl1.MyMML.Strategy");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleStrategySet"
+
+
+    // $ANTLR start "entryRuleResultDisplayParamsSet"
+    // InternalMyMML.g:208:1: entryRuleResultDisplayParamsSet returns [EObject current=null] : iv_ruleResultDisplayParamsSet= ruleResultDisplayParamsSet EOF ;
+    public final EObject entryRuleResultDisplayParamsSet() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResultDisplayParamsSet = null;
+
+
+        try {
+            // InternalMyMML.g:208:63: (iv_ruleResultDisplayParamsSet= ruleResultDisplayParamsSet EOF )
+            // InternalMyMML.g:209:2: iv_ruleResultDisplayParamsSet= ruleResultDisplayParamsSet EOF
+            {
+             newCompositeNode(grammarAccess.getResultDisplayParamsSetRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResultDisplayParamsSet=ruleResultDisplayParamsSet();
+
+            state._fsp--;
+
+             current =iv_ruleResultDisplayParamsSet; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResultDisplayParamsSet"
+
+
+    // $ANTLR start "ruleResultDisplayParamsSet"
+    // InternalMyMML.g:215:1: ruleResultDisplayParamsSet returns [EObject current=null] : (otherlv_0= 'ResultDisplayParamsSet' ( (lv_params_1_0= ruleDisplayParams ) )+ ) ;
+    public final EObject ruleResultDisplayParamsSet() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Enumerator lv_params_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMyMML.g:221:2: ( (otherlv_0= 'ResultDisplayParamsSet' ( (lv_params_1_0= ruleDisplayParams ) )+ ) )
+            // InternalMyMML.g:222:2: (otherlv_0= 'ResultDisplayParamsSet' ( (lv_params_1_0= ruleDisplayParams ) )+ )
+            {
+            // InternalMyMML.g:222:2: (otherlv_0= 'ResultDisplayParamsSet' ( (lv_params_1_0= ruleDisplayParams ) )+ )
+            // InternalMyMML.g:223:3: otherlv_0= 'ResultDisplayParamsSet' ( (lv_params_1_0= ruleDisplayParams ) )+
+            {
+            otherlv_0=(Token)match(input,12,FOLLOW_5); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResultDisplayParamsSetAccess().getResultDisplayParamsSetKeyword_0());
+            		
+            // InternalMyMML.g:227:3: ( (lv_params_1_0= ruleDisplayParams ) )+
+            int cnt2=0;
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( ((LA2_0>=28 && LA2_0<=30)) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // InternalMyMML.g:228:4: (lv_params_1_0= ruleDisplayParams )
+            	    {
+            	    // InternalMyMML.g:228:4: (lv_params_1_0= ruleDisplayParams )
+            	    // InternalMyMML.g:229:5: lv_params_1_0= ruleDisplayParams
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getResultDisplayParamsSetAccess().getParamsDisplayParamsEnumRuleCall_1_0());
+            	    				
+            	    pushFollow(FOLLOW_6);
+            	    lv_params_1_0=ruleDisplayParams();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getResultDisplayParamsSetRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"params",
+            	    						lv_params_1_0,
+            	    						"org.xtext.example.mydsl1.MyMML.DisplayParams");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt2 >= 1 ) break loop2;
+                        EarlyExitException eee =
+                            new EarlyExitException(2, input);
+                        throw eee;
+                }
+                cnt2++;
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResultDisplayParamsSet"
+
+
     // $ANTLR start "entryRulePutIn"
-    // InternalMyMML.g:126:1: entryRulePutIn returns [EObject current=null] : iv_rulePutIn= rulePutIn EOF ;
+    // InternalMyMML.g:250:1: entryRulePutIn returns [EObject current=null] : iv_rulePutIn= rulePutIn EOF ;
     public final EObject entryRulePutIn() throws RecognitionException {
         EObject current = null;
 
@@ -300,8 +621,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:126:46: (iv_rulePutIn= rulePutIn EOF )
-            // InternalMyMML.g:127:2: iv_rulePutIn= rulePutIn EOF
+            // InternalMyMML.g:250:46: (iv_rulePutIn= rulePutIn EOF )
+            // InternalMyMML.g:251:2: iv_rulePutIn= rulePutIn EOF
             {
              newCompositeNode(grammarAccess.getPutInRule()); 
             pushFollow(FOLLOW_1);
@@ -328,7 +649,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePutIn"
-    // InternalMyMML.g:133:1: rulePutIn returns [EObject current=null] : (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) ) ;
+    // InternalMyMML.g:257:1: rulePutIn returns [EObject current=null] : (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) ) ;
     public final EObject rulePutIn() throws RecognitionException {
         EObject current = null;
 
@@ -341,23 +662,23 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:139:2: ( (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) ) )
-            // InternalMyMML.g:140:2: (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) )
+            // InternalMyMML.g:263:2: ( (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) ) )
+            // InternalMyMML.g:264:2: (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) )
             {
-            // InternalMyMML.g:140:2: (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) )
-            // InternalMyMML.g:141:3: otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) )
+            // InternalMyMML.g:264:2: (otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) ) )
+            // InternalMyMML.g:265:3: otherlv_0= 'putIn' ( (lv_putId_1_0= RULE_ID ) ) ( (lv_value_2_0= ruleElement ) )
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_4); 
+            otherlv_0=(Token)match(input,13,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPutInAccess().getPutInKeyword_0());
             		
-            // InternalMyMML.g:145:3: ( (lv_putId_1_0= RULE_ID ) )
-            // InternalMyMML.g:146:4: (lv_putId_1_0= RULE_ID )
+            // InternalMyMML.g:269:3: ( (lv_putId_1_0= RULE_ID ) )
+            // InternalMyMML.g:270:4: (lv_putId_1_0= RULE_ID )
             {
-            // InternalMyMML.g:146:4: (lv_putId_1_0= RULE_ID )
-            // InternalMyMML.g:147:5: lv_putId_1_0= RULE_ID
+            // InternalMyMML.g:270:4: (lv_putId_1_0= RULE_ID )
+            // InternalMyMML.g:271:5: lv_putId_1_0= RULE_ID
             {
-            lv_putId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_putId_1_0=(Token)match(input,RULE_ID,FOLLOW_8); 
 
             					newLeafNode(lv_putId_1_0, grammarAccess.getPutInAccess().getPutIdIDTerminalRuleCall_1_0());
             				
@@ -377,11 +698,11 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyMML.g:163:3: ( (lv_value_2_0= ruleElement ) )
-            // InternalMyMML.g:164:4: (lv_value_2_0= ruleElement )
+            // InternalMyMML.g:287:3: ( (lv_value_2_0= ruleElement ) )
+            // InternalMyMML.g:288:4: (lv_value_2_0= ruleElement )
             {
-            // InternalMyMML.g:164:4: (lv_value_2_0= ruleElement )
-            // InternalMyMML.g:165:5: lv_value_2_0= ruleElement
+            // InternalMyMML.g:288:4: (lv_value_2_0= ruleElement )
+            // InternalMyMML.g:289:5: lv_value_2_0= ruleElement
             {
 
             					newCompositeNode(grammarAccess.getPutInAccess().getValueElementParserRuleCall_2_0());
@@ -431,7 +752,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElement"
-    // InternalMyMML.g:186:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
+    // InternalMyMML.g:310:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
     public final EObject entryRuleElement() throws RecognitionException {
         EObject current = null;
 
@@ -439,8 +760,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:186:48: (iv_ruleElement= ruleElement EOF )
-            // InternalMyMML.g:187:2: iv_ruleElement= ruleElement EOF
+            // InternalMyMML.g:310:48: (iv_ruleElement= ruleElement EOF )
+            // InternalMyMML.g:311:2: iv_ruleElement= ruleElement EOF
             {
              newCompositeNode(grammarAccess.getElementRule()); 
             pushFollow(FOLLOW_1);
@@ -467,7 +788,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElement"
-    // InternalMyMML.g:193:1: ruleElement returns [EObject current=null] : (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet ) ;
+    // InternalMyMML.g:317:1: ruleElement returns [EObject current=null] : (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet ) ;
     public final EObject ruleElement() throws RecognitionException {
         EObject current = null;
 
@@ -488,52 +809,52 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:199:2: ( (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet ) )
-            // InternalMyMML.g:200:2: (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet )
+            // InternalMyMML.g:323:2: ( (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet ) )
+            // InternalMyMML.g:324:2: (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet )
             {
-            // InternalMyMML.g:200:2: (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet )
-            int alt2=6;
+            // InternalMyMML.g:324:2: (this_FileSet_0= ruleFileSet | this_PredictiveColumns_1= rulePredictiveColumns | this_CibleColumn_2= ruleCibleColumn | this_TestValueSize_3= ruleTestValueSize | this_TrainValueSize_4= ruleTrainValueSize | this_AlgorithmSet_5= ruleAlgorithmSet )
+            int alt3=6;
             switch ( input.LA(1) ) {
-            case 12:
+            case 14:
                 {
-                alt2=1;
-                }
-                break;
-            case 15:
-                {
-                alt2=2;
-                }
-                break;
-            case 16:
-                {
-                alt2=3;
+                alt3=1;
                 }
                 break;
             case 17:
                 {
-                alt2=4;
+                alt3=2;
                 }
                 break;
             case 18:
                 {
-                alt2=5;
+                alt3=3;
                 }
                 break;
             case 19:
                 {
-                alt2=6;
+                alt3=4;
+                }
+                break;
+            case 20:
+                {
+                alt3=5;
+                }
+                break;
+            case 21:
+                {
+                alt3=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalMyMML.g:201:3: this_FileSet_0= ruleFileSet
+                    // InternalMyMML.g:325:3: this_FileSet_0= ruleFileSet
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getFileSetParserRuleCall_0());
@@ -551,7 +872,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyMML.g:210:3: this_PredictiveColumns_1= rulePredictiveColumns
+                    // InternalMyMML.g:334:3: this_PredictiveColumns_1= rulePredictiveColumns
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getPredictiveColumnsParserRuleCall_1());
@@ -569,7 +890,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalMyMML.g:219:3: this_CibleColumn_2= ruleCibleColumn
+                    // InternalMyMML.g:343:3: this_CibleColumn_2= ruleCibleColumn
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getCibleColumnParserRuleCall_2());
@@ -587,7 +908,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalMyMML.g:228:3: this_TestValueSize_3= ruleTestValueSize
+                    // InternalMyMML.g:352:3: this_TestValueSize_3= ruleTestValueSize
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getTestValueSizeParserRuleCall_3());
@@ -605,7 +926,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalMyMML.g:237:3: this_TrainValueSize_4= ruleTrainValueSize
+                    // InternalMyMML.g:361:3: this_TrainValueSize_4= ruleTrainValueSize
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getTrainValueSizeParserRuleCall_4());
@@ -623,7 +944,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalMyMML.g:246:3: this_AlgorithmSet_5= ruleAlgorithmSet
+                    // InternalMyMML.g:370:3: this_AlgorithmSet_5= ruleAlgorithmSet
                     {
 
                     			newCompositeNode(grammarAccess.getElementAccess().getAlgorithmSetParserRuleCall_5());
@@ -663,7 +984,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFileSet"
-    // InternalMyMML.g:258:1: entryRuleFileSet returns [EObject current=null] : iv_ruleFileSet= ruleFileSet EOF ;
+    // InternalMyMML.g:382:1: entryRuleFileSet returns [EObject current=null] : iv_ruleFileSet= ruleFileSet EOF ;
     public final EObject entryRuleFileSet() throws RecognitionException {
         EObject current = null;
 
@@ -671,8 +992,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:258:48: (iv_ruleFileSet= ruleFileSet EOF )
-            // InternalMyMML.g:259:2: iv_ruleFileSet= ruleFileSet EOF
+            // InternalMyMML.g:382:48: (iv_ruleFileSet= ruleFileSet EOF )
+            // InternalMyMML.g:383:2: iv_ruleFileSet= ruleFileSet EOF
             {
              newCompositeNode(grammarAccess.getFileSetRule()); 
             pushFollow(FOLLOW_1);
@@ -699,7 +1020,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFileSet"
-    // InternalMyMML.g:265:1: ruleFileSet returns [EObject current=null] : (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:389:1: ruleFileSet returns [EObject current=null] : (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
     public final EObject ruleFileSet() throws RecognitionException {
         EObject current = null;
 
@@ -712,27 +1033,27 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:271:2: ( (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:272:2: (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:395:2: ( (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
+            // InternalMyMML.g:396:2: (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' )
             {
-            // InternalMyMML.g:272:2: (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' )
-            // InternalMyMML.g:273:3: otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>'
+            // InternalMyMML.g:396:2: (otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:397:3: otherlv_0= 'fileSet' otherlv_1= '<' ( (lv_text_2_0= RULE_STRING ) ) otherlv_3= '>'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_6); 
+            otherlv_0=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFileSetAccess().getFileSetKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_7); 
+            otherlv_1=(Token)match(input,15,FOLLOW_10); 
 
             			newLeafNode(otherlv_1, grammarAccess.getFileSetAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:281:3: ( (lv_text_2_0= RULE_STRING ) )
-            // InternalMyMML.g:282:4: (lv_text_2_0= RULE_STRING )
+            // InternalMyMML.g:405:3: ( (lv_text_2_0= RULE_STRING ) )
+            // InternalMyMML.g:406:4: (lv_text_2_0= RULE_STRING )
             {
-            // InternalMyMML.g:282:4: (lv_text_2_0= RULE_STRING )
-            // InternalMyMML.g:283:5: lv_text_2_0= RULE_STRING
+            // InternalMyMML.g:406:4: (lv_text_2_0= RULE_STRING )
+            // InternalMyMML.g:407:5: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
 
             					newLeafNode(lv_text_2_0, grammarAccess.getFileSetAccess().getTextSTRINGTerminalRuleCall_2_0());
             				
@@ -752,7 +1073,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
+            otherlv_3=(Token)match(input,16,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getFileSetAccess().getGreaterThanSignKeyword_3());
             		
@@ -779,7 +1100,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePredictiveColumns"
-    // InternalMyMML.g:307:1: entryRulePredictiveColumns returns [EObject current=null] : iv_rulePredictiveColumns= rulePredictiveColumns EOF ;
+    // InternalMyMML.g:431:1: entryRulePredictiveColumns returns [EObject current=null] : iv_rulePredictiveColumns= rulePredictiveColumns EOF ;
     public final EObject entryRulePredictiveColumns() throws RecognitionException {
         EObject current = null;
 
@@ -787,8 +1108,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:307:58: (iv_rulePredictiveColumns= rulePredictiveColumns EOF )
-            // InternalMyMML.g:308:2: iv_rulePredictiveColumns= rulePredictiveColumns EOF
+            // InternalMyMML.g:431:58: (iv_rulePredictiveColumns= rulePredictiveColumns EOF )
+            // InternalMyMML.g:432:2: iv_rulePredictiveColumns= rulePredictiveColumns EOF
             {
              newCompositeNode(grammarAccess.getPredictiveColumnsRule()); 
             pushFollow(FOLLOW_1);
@@ -815,7 +1136,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredictiveColumns"
-    // InternalMyMML.g:314:1: rulePredictiveColumns returns [EObject current=null] : (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:438:1: rulePredictiveColumns returns [EObject current=null] : (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
     public final EObject rulePredictiveColumns() throws RecognitionException {
         EObject current = null;
 
@@ -828,27 +1149,27 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:320:2: ( (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:321:2: (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:444:2: ( (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
+            // InternalMyMML.g:445:2: (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
             {
-            // InternalMyMML.g:321:2: (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
-            // InternalMyMML.g:322:3: otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>'
+            // InternalMyMML.g:445:2: (otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:446:3: otherlv_0= 'predictiveColumns' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_6); 
+            otherlv_0=(Token)match(input,17,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPredictiveColumnsAccess().getPredictiveColumnsKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_7); 
+            otherlv_1=(Token)match(input,15,FOLLOW_10); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPredictiveColumnsAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:330:3: ( (lv_column_2_0= RULE_STRING ) )
-            // InternalMyMML.g:331:4: (lv_column_2_0= RULE_STRING )
+            // InternalMyMML.g:454:3: ( (lv_column_2_0= RULE_STRING ) )
+            // InternalMyMML.g:455:4: (lv_column_2_0= RULE_STRING )
             {
-            // InternalMyMML.g:331:4: (lv_column_2_0= RULE_STRING )
-            // InternalMyMML.g:332:5: lv_column_2_0= RULE_STRING
+            // InternalMyMML.g:455:4: (lv_column_2_0= RULE_STRING )
+            // InternalMyMML.g:456:5: lv_column_2_0= RULE_STRING
             {
-            lv_column_2_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+            lv_column_2_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
 
             					newLeafNode(lv_column_2_0, grammarAccess.getPredictiveColumnsAccess().getColumnSTRINGTerminalRuleCall_2_0());
             				
@@ -868,7 +1189,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
+            otherlv_3=(Token)match(input,16,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getPredictiveColumnsAccess().getGreaterThanSignKeyword_3());
             		
@@ -895,7 +1216,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCibleColumn"
-    // InternalMyMML.g:356:1: entryRuleCibleColumn returns [EObject current=null] : iv_ruleCibleColumn= ruleCibleColumn EOF ;
+    // InternalMyMML.g:480:1: entryRuleCibleColumn returns [EObject current=null] : iv_ruleCibleColumn= ruleCibleColumn EOF ;
     public final EObject entryRuleCibleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -903,8 +1224,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:356:52: (iv_ruleCibleColumn= ruleCibleColumn EOF )
-            // InternalMyMML.g:357:2: iv_ruleCibleColumn= ruleCibleColumn EOF
+            // InternalMyMML.g:480:52: (iv_ruleCibleColumn= ruleCibleColumn EOF )
+            // InternalMyMML.g:481:2: iv_ruleCibleColumn= ruleCibleColumn EOF
             {
              newCompositeNode(grammarAccess.getCibleColumnRule()); 
             pushFollow(FOLLOW_1);
@@ -931,7 +1252,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCibleColumn"
-    // InternalMyMML.g:363:1: ruleCibleColumn returns [EObject current=null] : (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:487:1: ruleCibleColumn returns [EObject current=null] : (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) ;
     public final EObject ruleCibleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -944,27 +1265,27 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:369:2: ( (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:370:2: (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:493:2: ( (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' ) )
+            // InternalMyMML.g:494:2: (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
             {
-            // InternalMyMML.g:370:2: (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
-            // InternalMyMML.g:371:3: otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>'
+            // InternalMyMML.g:494:2: (otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>' )
+            // InternalMyMML.g:495:3: otherlv_0= 'CibleColumn' otherlv_1= '<' ( (lv_column_2_0= RULE_STRING ) ) otherlv_3= '>'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_6); 
+            otherlv_0=(Token)match(input,18,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCibleColumnAccess().getCibleColumnKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_7); 
+            otherlv_1=(Token)match(input,15,FOLLOW_10); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCibleColumnAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:379:3: ( (lv_column_2_0= RULE_STRING ) )
-            // InternalMyMML.g:380:4: (lv_column_2_0= RULE_STRING )
+            // InternalMyMML.g:503:3: ( (lv_column_2_0= RULE_STRING ) )
+            // InternalMyMML.g:504:4: (lv_column_2_0= RULE_STRING )
             {
-            // InternalMyMML.g:380:4: (lv_column_2_0= RULE_STRING )
-            // InternalMyMML.g:381:5: lv_column_2_0= RULE_STRING
+            // InternalMyMML.g:504:4: (lv_column_2_0= RULE_STRING )
+            // InternalMyMML.g:505:5: lv_column_2_0= RULE_STRING
             {
-            lv_column_2_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+            lv_column_2_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
 
             					newLeafNode(lv_column_2_0, grammarAccess.getCibleColumnAccess().getColumnSTRINGTerminalRuleCall_2_0());
             				
@@ -984,7 +1305,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
+            otherlv_3=(Token)match(input,16,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getCibleColumnAccess().getGreaterThanSignKeyword_3());
             		
@@ -1011,7 +1332,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTestValueSize"
-    // InternalMyMML.g:405:1: entryRuleTestValueSize returns [EObject current=null] : iv_ruleTestValueSize= ruleTestValueSize EOF ;
+    // InternalMyMML.g:529:1: entryRuleTestValueSize returns [EObject current=null] : iv_ruleTestValueSize= ruleTestValueSize EOF ;
     public final EObject entryRuleTestValueSize() throws RecognitionException {
         EObject current = null;
 
@@ -1019,8 +1340,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:405:54: (iv_ruleTestValueSize= ruleTestValueSize EOF )
-            // InternalMyMML.g:406:2: iv_ruleTestValueSize= ruleTestValueSize EOF
+            // InternalMyMML.g:529:54: (iv_ruleTestValueSize= ruleTestValueSize EOF )
+            // InternalMyMML.g:530:2: iv_ruleTestValueSize= ruleTestValueSize EOF
             {
              newCompositeNode(grammarAccess.getTestValueSizeRule()); 
             pushFollow(FOLLOW_1);
@@ -1047,7 +1368,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTestValueSize"
-    // InternalMyMML.g:412:1: ruleTestValueSize returns [EObject current=null] : (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:536:1: ruleTestValueSize returns [EObject current=null] : (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) ;
     public final EObject ruleTestValueSize() throws RecognitionException {
         EObject current = null;
 
@@ -1060,27 +1381,27 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:418:2: ( (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:419:2: (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
+            // InternalMyMML.g:542:2: ( (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) )
+            // InternalMyMML.g:543:2: (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
             {
-            // InternalMyMML.g:419:2: (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
-            // InternalMyMML.g:420:3: otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>'
+            // InternalMyMML.g:543:2: (otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
+            // InternalMyMML.g:544:3: otherlv_0= 'testValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_6); 
+            otherlv_0=(Token)match(input,19,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTestValueSizeAccess().getTestValueSizeKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_9); 
+            otherlv_1=(Token)match(input,15,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTestValueSizeAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:428:3: ( (lv_size_2_0= RULE_INT ) )
-            // InternalMyMML.g:429:4: (lv_size_2_0= RULE_INT )
+            // InternalMyMML.g:552:3: ( (lv_size_2_0= RULE_INT ) )
+            // InternalMyMML.g:553:4: (lv_size_2_0= RULE_INT )
             {
-            // InternalMyMML.g:429:4: (lv_size_2_0= RULE_INT )
-            // InternalMyMML.g:430:5: lv_size_2_0= RULE_INT
+            // InternalMyMML.g:553:4: (lv_size_2_0= RULE_INT )
+            // InternalMyMML.g:554:5: lv_size_2_0= RULE_INT
             {
-            lv_size_2_0=(Token)match(input,RULE_INT,FOLLOW_8); 
+            lv_size_2_0=(Token)match(input,RULE_INT,FOLLOW_11); 
 
             					newLeafNode(lv_size_2_0, grammarAccess.getTestValueSizeAccess().getSizeINTTerminalRuleCall_2_0());
             				
@@ -1100,7 +1421,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
+            otherlv_3=(Token)match(input,16,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTestValueSizeAccess().getGreaterThanSignKeyword_3());
             		
@@ -1127,7 +1448,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrainValueSize"
-    // InternalMyMML.g:454:1: entryRuleTrainValueSize returns [EObject current=null] : iv_ruleTrainValueSize= ruleTrainValueSize EOF ;
+    // InternalMyMML.g:578:1: entryRuleTrainValueSize returns [EObject current=null] : iv_ruleTrainValueSize= ruleTrainValueSize EOF ;
     public final EObject entryRuleTrainValueSize() throws RecognitionException {
         EObject current = null;
 
@@ -1135,8 +1456,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:454:55: (iv_ruleTrainValueSize= ruleTrainValueSize EOF )
-            // InternalMyMML.g:455:2: iv_ruleTrainValueSize= ruleTrainValueSize EOF
+            // InternalMyMML.g:578:55: (iv_ruleTrainValueSize= ruleTrainValueSize EOF )
+            // InternalMyMML.g:579:2: iv_ruleTrainValueSize= ruleTrainValueSize EOF
             {
              newCompositeNode(grammarAccess.getTrainValueSizeRule()); 
             pushFollow(FOLLOW_1);
@@ -1163,52 +1484,47 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrainValueSize"
-    // InternalMyMML.g:461:1: ruleTrainValueSize returns [EObject current=null] : (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:585:1: ruleTrainValueSize returns [EObject current=null] : (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= '>' ) ) ) ;
     public final EObject ruleTrainValueSize() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token lv_size_2_0=null;
-        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyMML.g:467:2: ( (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:468:2: (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
+            // InternalMyMML.g:591:2: ( (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= '>' ) ) ) )
+            // InternalMyMML.g:592:2: (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= '>' ) ) )
             {
-            // InternalMyMML.g:468:2: (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>' )
-            // InternalMyMML.g:469:3: otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= RULE_INT ) ) otherlv_3= '>'
+            // InternalMyMML.g:592:2: (otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= '>' ) ) )
+            // InternalMyMML.g:593:3: otherlv_0= 'trainValueSize' otherlv_1= '<' ( (lv_size_2_0= '>' ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_6); 
+            otherlv_0=(Token)match(input,20,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTrainValueSizeAccess().getTrainValueSizeKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_9); 
+            otherlv_1=(Token)match(input,15,FOLLOW_11); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTrainValueSizeAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:477:3: ( (lv_size_2_0= RULE_INT ) )
-            // InternalMyMML.g:478:4: (lv_size_2_0= RULE_INT )
+            // InternalMyMML.g:601:3: ( (lv_size_2_0= '>' ) )
+            // InternalMyMML.g:602:4: (lv_size_2_0= '>' )
             {
-            // InternalMyMML.g:478:4: (lv_size_2_0= RULE_INT )
-            // InternalMyMML.g:479:5: lv_size_2_0= RULE_INT
+            // InternalMyMML.g:602:4: (lv_size_2_0= '>' )
+            // InternalMyMML.g:603:5: lv_size_2_0= '>'
             {
-            lv_size_2_0=(Token)match(input,RULE_INT,FOLLOW_8); 
+            lv_size_2_0=(Token)match(input,16,FOLLOW_2); 
 
-            					newLeafNode(lv_size_2_0, grammarAccess.getTrainValueSizeAccess().getSizeINTTerminalRuleCall_2_0());
+            					newLeafNode(lv_size_2_0, grammarAccess.getTrainValueSizeAccess().getSizeGreaterThanSignKeyword_2_0());
             				
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getTrainValueSizeRule());
             					}
-            					setWithLastConsumed(
-            						current,
-            						"size",
-            						lv_size_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            					setWithLastConsumed(current, "size", lv_size_2_0, ">");
             				
 
             }
@@ -1216,10 +1532,6 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getTrainValueSizeAccess().getGreaterThanSignKeyword_3());
-            		
 
             }
 
@@ -1243,7 +1555,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlgorithmSet"
-    // InternalMyMML.g:503:1: entryRuleAlgorithmSet returns [EObject current=null] : iv_ruleAlgorithmSet= ruleAlgorithmSet EOF ;
+    // InternalMyMML.g:619:1: entryRuleAlgorithmSet returns [EObject current=null] : iv_ruleAlgorithmSet= ruleAlgorithmSet EOF ;
     public final EObject entryRuleAlgorithmSet() throws RecognitionException {
         EObject current = null;
 
@@ -1251,8 +1563,8 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyMML.g:503:53: (iv_ruleAlgorithmSet= ruleAlgorithmSet EOF )
-            // InternalMyMML.g:504:2: iv_ruleAlgorithmSet= ruleAlgorithmSet EOF
+            // InternalMyMML.g:619:53: (iv_ruleAlgorithmSet= ruleAlgorithmSet EOF )
+            // InternalMyMML.g:620:2: iv_ruleAlgorithmSet= ruleAlgorithmSet EOF
             {
              newCompositeNode(grammarAccess.getAlgorithmSetRule()); 
             pushFollow(FOLLOW_1);
@@ -1279,7 +1591,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlgorithmSet"
-    // InternalMyMML.g:510:1: ruleAlgorithmSet returns [EObject current=null] : (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' ) ;
+    // InternalMyMML.g:626:1: ruleAlgorithmSet returns [EObject current=null] : (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' ) ;
     public final EObject ruleAlgorithmSet() throws RecognitionException {
         EObject current = null;
 
@@ -1293,30 +1605,30 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:516:2: ( (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' ) )
-            // InternalMyMML.g:517:2: (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' )
+            // InternalMyMML.g:632:2: ( (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' ) )
+            // InternalMyMML.g:633:2: (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' )
             {
-            // InternalMyMML.g:517:2: (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' )
-            // InternalMyMML.g:518:3: otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>'
+            // InternalMyMML.g:633:2: (otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>' )
+            // InternalMyMML.g:634:3: otherlv_0= 'algorithmSet' otherlv_1= '<' ( (lv_algoName_2_0= ruleAlgo ) ) otherlv_3= '>'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_6); 
+            otherlv_0=(Token)match(input,21,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAlgorithmSetAccess().getAlgorithmSetKeyword_0());
             		
-            otherlv_1=(Token)match(input,13,FOLLOW_10); 
+            otherlv_1=(Token)match(input,15,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAlgorithmSetAccess().getLessThanSignKeyword_1());
             		
-            // InternalMyMML.g:526:3: ( (lv_algoName_2_0= ruleAlgo ) )
-            // InternalMyMML.g:527:4: (lv_algoName_2_0= ruleAlgo )
+            // InternalMyMML.g:642:3: ( (lv_algoName_2_0= ruleAlgo ) )
+            // InternalMyMML.g:643:4: (lv_algoName_2_0= ruleAlgo )
             {
-            // InternalMyMML.g:527:4: (lv_algoName_2_0= ruleAlgo )
-            // InternalMyMML.g:528:5: lv_algoName_2_0= ruleAlgo
+            // InternalMyMML.g:643:4: (lv_algoName_2_0= ruleAlgo )
+            // InternalMyMML.g:644:5: lv_algoName_2_0= ruleAlgo
             {
 
             					newCompositeNode(grammarAccess.getAlgorithmSetAccess().getAlgoNameAlgoEnumRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_11);
             lv_algoName_2_0=ruleAlgo();
 
             state._fsp--;
@@ -1338,7 +1650,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_2); 
+            otherlv_3=(Token)match(input,16,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAlgorithmSetAccess().getGreaterThanSignKeyword_3());
             		
@@ -1365,7 +1677,7 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlgo"
-    // InternalMyMML.g:553:1: ruleAlgo returns [Enumerator current=null] : ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) ) ;
+    // InternalMyMML.g:669:1: ruleAlgo returns [Enumerator current=null] : ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) ) ;
     public final Enumerator ruleAlgo() throws RecognitionException {
         Enumerator current = null;
 
@@ -1378,47 +1690,47 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyMML.g:559:2: ( ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) ) )
-            // InternalMyMML.g:560:2: ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) )
+            // InternalMyMML.g:675:2: ( ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) ) )
+            // InternalMyMML.g:676:2: ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) )
             {
-            // InternalMyMML.g:560:2: ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) )
-            int alt3=4;
+            // InternalMyMML.g:676:2: ( (enumLiteral_0= 'DecisionTreeClassifier' ) | (enumLiteral_1= 'SVM' ) | (enumLiteral_2= 'J48' ) | (enumLiteral_3= 'NaiveBayes' ) )
+            int alt4=4;
             switch ( input.LA(1) ) {
-            case 20:
-                {
-                alt3=1;
-                }
-                break;
-            case 21:
-                {
-                alt3=2;
-                }
-                break;
             case 22:
                 {
-                alt3=3;
+                alt4=1;
                 }
                 break;
             case 23:
                 {
-                alt3=4;
+                alt4=2;
+                }
+                break;
+            case 24:
+                {
+                alt4=3;
+                }
+                break;
+            case 25:
+                {
+                alt4=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
-                    // InternalMyMML.g:561:3: (enumLiteral_0= 'DecisionTreeClassifier' )
+                    // InternalMyMML.g:677:3: (enumLiteral_0= 'DecisionTreeClassifier' )
                     {
-                    // InternalMyMML.g:561:3: (enumLiteral_0= 'DecisionTreeClassifier' )
-                    // InternalMyMML.g:562:4: enumLiteral_0= 'DecisionTreeClassifier'
+                    // InternalMyMML.g:677:3: (enumLiteral_0= 'DecisionTreeClassifier' )
+                    // InternalMyMML.g:678:4: enumLiteral_0= 'DecisionTreeClassifier'
                     {
-                    enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,22,FOLLOW_2); 
 
                     				current = grammarAccess.getAlgoAccess().getDecisionTreeClassifierEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getAlgoAccess().getDecisionTreeClassifierEnumLiteralDeclaration_0());
@@ -1430,12 +1742,12 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyMML.g:569:3: (enumLiteral_1= 'SVM' )
+                    // InternalMyMML.g:685:3: (enumLiteral_1= 'SVM' )
                     {
-                    // InternalMyMML.g:569:3: (enumLiteral_1= 'SVM' )
-                    // InternalMyMML.g:570:4: enumLiteral_1= 'SVM'
+                    // InternalMyMML.g:685:3: (enumLiteral_1= 'SVM' )
+                    // InternalMyMML.g:686:4: enumLiteral_1= 'SVM'
                     {
-                    enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,23,FOLLOW_2); 
 
                     				current = grammarAccess.getAlgoAccess().getSVMEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getAlgoAccess().getSVMEnumLiteralDeclaration_1());
@@ -1447,12 +1759,12 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalMyMML.g:577:3: (enumLiteral_2= 'J48' )
+                    // InternalMyMML.g:693:3: (enumLiteral_2= 'J48' )
                     {
-                    // InternalMyMML.g:577:3: (enumLiteral_2= 'J48' )
-                    // InternalMyMML.g:578:4: enumLiteral_2= 'J48'
+                    // InternalMyMML.g:693:3: (enumLiteral_2= 'J48' )
+                    // InternalMyMML.g:694:4: enumLiteral_2= 'J48'
                     {
-                    enumLiteral_2=(Token)match(input,22,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,24,FOLLOW_2); 
 
                     				current = grammarAccess.getAlgoAccess().getJ48EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getAlgoAccess().getJ48EnumLiteralDeclaration_2());
@@ -1464,12 +1776,12 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalMyMML.g:585:3: (enumLiteral_3= 'NaiveBayes' )
+                    // InternalMyMML.g:701:3: (enumLiteral_3= 'NaiveBayes' )
                     {
-                    // InternalMyMML.g:585:3: (enumLiteral_3= 'NaiveBayes' )
-                    // InternalMyMML.g:586:4: enumLiteral_3= 'NaiveBayes'
+                    // InternalMyMML.g:701:3: (enumLiteral_3= 'NaiveBayes' )
+                    // InternalMyMML.g:702:4: enumLiteral_3= 'NaiveBayes'
                     {
-                    enumLiteral_3=(Token)match(input,23,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,25,FOLLOW_2); 
 
                     				current = grammarAccess.getAlgoAccess().getNaiveBayesEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getAlgoAccess().getNaiveBayesEnumLiteralDeclaration_3());
@@ -1501,6 +1813,209 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleAlgo"
 
+
+    // $ANTLR start "ruleStrategy"
+    // InternalMyMML.g:712:1: ruleStrategy returns [Enumerator current=null] : ( (enumLiteral_0= 'TrainingTest' ) | (enumLiteral_1= 'CrossValidation' ) ) ;
+    public final Enumerator ruleStrategy() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMyMML.g:718:2: ( ( (enumLiteral_0= 'TrainingTest' ) | (enumLiteral_1= 'CrossValidation' ) ) )
+            // InternalMyMML.g:719:2: ( (enumLiteral_0= 'TrainingTest' ) | (enumLiteral_1= 'CrossValidation' ) )
+            {
+            // InternalMyMML.g:719:2: ( (enumLiteral_0= 'TrainingTest' ) | (enumLiteral_1= 'CrossValidation' ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==26) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==27) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalMyMML.g:720:3: (enumLiteral_0= 'TrainingTest' )
+                    {
+                    // InternalMyMML.g:720:3: (enumLiteral_0= 'TrainingTest' )
+                    // InternalMyMML.g:721:4: enumLiteral_0= 'TrainingTest'
+                    {
+                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
+
+                    				current = grammarAccess.getStrategyAccess().getTrainingTestEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getStrategyAccess().getTrainingTestEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMyMML.g:728:3: (enumLiteral_1= 'CrossValidation' )
+                    {
+                    // InternalMyMML.g:728:3: (enumLiteral_1= 'CrossValidation' )
+                    // InternalMyMML.g:729:4: enumLiteral_1= 'CrossValidation'
+                    {
+                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
+
+                    				current = grammarAccess.getStrategyAccess().getCrossValidationEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getStrategyAccess().getCrossValidationEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleStrategy"
+
+
+    // $ANTLR start "ruleDisplayParams"
+    // InternalMyMML.g:739:1: ruleDisplayParams returns [Enumerator current=null] : ( (enumLiteral_0= 'Precision' ) | (enumLiteral_1= 'Recall' ) | (enumLiteral_2= 'f1' ) ) ;
+    public final Enumerator ruleDisplayParams() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMyMML.g:745:2: ( ( (enumLiteral_0= 'Precision' ) | (enumLiteral_1= 'Recall' ) | (enumLiteral_2= 'f1' ) ) )
+            // InternalMyMML.g:746:2: ( (enumLiteral_0= 'Precision' ) | (enumLiteral_1= 'Recall' ) | (enumLiteral_2= 'f1' ) )
+            {
+            // InternalMyMML.g:746:2: ( (enumLiteral_0= 'Precision' ) | (enumLiteral_1= 'Recall' ) | (enumLiteral_2= 'f1' ) )
+            int alt6=3;
+            switch ( input.LA(1) ) {
+            case 28:
+                {
+                alt6=1;
+                }
+                break;
+            case 29:
+                {
+                alt6=2;
+                }
+                break;
+            case 30:
+                {
+                alt6=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // InternalMyMML.g:747:3: (enumLiteral_0= 'Precision' )
+                    {
+                    // InternalMyMML.g:747:3: (enumLiteral_0= 'Precision' )
+                    // InternalMyMML.g:748:4: enumLiteral_0= 'Precision'
+                    {
+                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
+
+                    				current = grammarAccess.getDisplayParamsAccess().getPrecisionEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getDisplayParamsAccess().getPrecisionEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMyMML.g:755:3: (enumLiteral_1= 'Recall' )
+                    {
+                    // InternalMyMML.g:755:3: (enumLiteral_1= 'Recall' )
+                    // InternalMyMML.g:756:4: enumLiteral_1= 'Recall'
+                    {
+                    enumLiteral_1=(Token)match(input,29,FOLLOW_2); 
+
+                    				current = grammarAccess.getDisplayParamsAccess().getRecallEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getDisplayParamsAccess().getRecallEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMyMML.g:763:3: (enumLiteral_2= 'f1' )
+                    {
+                    // InternalMyMML.g:763:3: (enumLiteral_2= 'f1' )
+                    // InternalMyMML.g:764:4: enumLiteral_2= 'f1'
+                    {
+                    enumLiteral_2=(Token)match(input,30,FOLLOW_2); 
+
+                    				current = grammarAccess.getDisplayParamsAccess().getF1EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getDisplayParamsAccess().getF1EnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDisplayParams"
+
     // Delegated rules
 
 
@@ -1508,13 +2023,16 @@ public class InternalMyMMLParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x00000000000F9000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000F00000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000070000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000070000002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000003E4000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000003C00000L});
 
 }

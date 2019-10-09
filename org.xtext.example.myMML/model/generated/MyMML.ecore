@@ -2,10 +2,21 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myMML" nsURI="http://www.xtext.org/example/mydsl1/MyMML" nsPrefix="myMML">
   <eClassifiers xsi:type="ecore:EClass" name="MMLGenerator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategySet" eType="#//StrategySet"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultDisplayParamsSet"
+        eType="#//ResultDisplayParamsSet" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StrategySet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="#//Strategy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultDisplayParamsSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="params" unique="false"
+        upperBound="-1" eType="#//DisplayParams"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PutIn" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="putId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Element"
@@ -25,7 +36,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrainValueSize" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlgorithmSet" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="algoName" eType="#//Algo"/>
@@ -35,5 +46,14 @@
     <eLiterals name="SVM" value="1" literal="SVM"/>
     <eLiterals name="J48" value="2" literal="J48"/>
     <eLiterals name="NaiveBayes" value="3" literal="NaiveBayes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Strategy">
+    <eLiterals name="TrainingTest" literal="TrainingTest"/>
+    <eLiterals name="CrossValidation" value="1" literal="CrossValidation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DisplayParams">
+    <eLiterals name="Precision" literal="Precision"/>
+    <eLiterals name="Recall" value="1" literal="Recall"/>
+    <eLiterals name="f1" value="2" literal="f1"/>
   </eClassifiers>
 </ecore:EPackage>
